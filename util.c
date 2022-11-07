@@ -20,14 +20,22 @@ and this notice must be preserved on all copies.  */
 
 #include <stdio.h>
 #include <sys/types.h>
+#ifndef _WIN32
 #include <sys/time.h>
 #include <sys/timeb.h>
 #include <sys/resource.h>
+#else
+#include <time.h>
+#include <winsock.h>
+#include <fcntl.h>
+#endif
 #include <ctype.h>
 #include "gnuchess.h"
 
 int sorttype;
+#ifdef RUSAGE
 struct rusage rubuf;
+#endif
 struct timeval timcpu;
 extern FILE *hisf;
 extern int nmoves,histtot;
@@ -374,7 +382,7 @@ compare(f1, f2)
 	return(0);
 }
 
-long time();
+//long time();
 
 /*
  * Timeon turns on a timer.
@@ -390,9 +398,14 @@ timeon()
     else 
       {
 #endif PARALLEL
+#ifdef RUSAGE
 	      getrusage(RUSAGE_SELF,&rubuf);
 	      timcpu.tv_sec = rubuf.ru_utime.tv_sec;
 	      timcpu.tv_usec = rubuf.ru_stime.tv_usec;
+#else
+	      timcpu.tv_sec = time(0);
+              timcpu.tv_usec = 0;
+#endif
 #ifdef PARALLEL
       }
 #endif PARALLEL
@@ -412,9 +425,14 @@ timeoff()
     else
     {
 #endif PARALLEL
+#ifdef RUSAGE
 	    getrusage(RUSAGE_SELF,&rubuf);
 	    timcpu.tv_sec = rubuf.ru_utime.tv_sec - timcpu.tv_sec;
 	    timcpu.tv_usec = rubuf.ru_utime.tv_usec - timcpu.tv_usec;
+#else
+	timcpu.tv_sec = time(0) - timcpu.tv_sec;
+	timcpu.tv_usec = 0;
+#endif
 #ifdef PARALLEL
     }
 #endif PARALLEL

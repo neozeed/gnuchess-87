@@ -19,8 +19,14 @@ file named COPYING.  Among other things, the copyright notice
 and this notice must be preserved on all copies.  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
+#ifndef _WIN32
 #include <sys/time.h>
+#else
+#include <time.h>
+#include <winsock.h>
+#endif
 #include "gnuchess.h"
 
 #define in_check(bd) FALSE

@@ -1,0 +1,10 @@
+  White Black Depth  Nodes  Score    Cpu     Rate
+1. e2e4 e7e5	  4   5793      0   0.00      1
+2. d2d4 b8c6	  4      0      0   0.00      0
+3. d4e5 c6e5	  4  17966      0   0.00      1
+4. g1f3 b7b6	  4      0      0   0.00      0
+5. f3e5 f8c5	  4 487931   -325   0.00      1
+6. d1d5 c5b4	  4 2079943   -425   1.00      2079943
+7. e1d1 a7a6	  4      0    775   0.00      0
+8. d5f7 	  4 161840   4525   0.00      1
+Averages:  4.00 ply, 550695 nodes,  0.20 cpu, 2753473 nodes/sec

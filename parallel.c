@@ -25,8 +25,12 @@ and this notice must be preserved on all copies.  */
 #include <sys/wait.h>
 #include "gnuchess.h"
 
-#define DATAFILE "/usr/redwood/cracraft/parallel-data"
-#define LOCKFILE "/usr/redwood/cracraft/parallel-lock"
+//#define DATAFILE "/usr/redwood/cracraft/parallel-data"
+//#define LOCKFILE "/usr/redwood/cracraft/parallel-lock"
+
+#define DATAFILE "parallel-data"
+#define LOCKFILE "parallel-lock"
+
 
 #define fast_eval ((bd[TOMOVE].moved == WHITE) ? bd[WMAT].moved - bd[BMAT].moved : bd[BMAT].moved - bd[WMAT].moved)
 
@@ -296,7 +300,8 @@ wait_parallel()
 	{
 	    if (procarray[i].use)
 	    {
-		strcpy(filename,"/usr/redwood/cracraft/");
+//		strcpy(filename,"/usr/redwood/cracraft/");
+		strcpy(filename,"");
 		strcat(filename,procarray[i].procname);
 		if ((fp = fopen(filename,"r")) == NULL)
 		{

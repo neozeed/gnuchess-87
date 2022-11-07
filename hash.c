@@ -21,6 +21,11 @@ and this notice must be preserved on all copies.  */
 #include <stdio.h>
 #include "gnuchess.h"
 
+#ifdef _WIN32
+#define random rand
+#define srandom srand
+#endif
+
 long numhash = 0;
 long rands[(MAXPC*2)+1][120],hashval;
 #ifdef HASH
@@ -168,6 +173,7 @@ init_rands()
     int i,j;
     hashval = 0;
     srandom(1);
+    srandom(getpid());
     for (j = WP; j <= WK; j++)
       for (i = 21; i < 99; i++)
 	if ((i % 10 != 0) && (i % 10 != 9))

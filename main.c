@@ -19,11 +19,22 @@ file named COPYING.  Among other things, the copyright notice
 and this notice must be preserved on all copies.  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <sys/types.h>
+#ifndef _WIN32
 #include <sys/time.h>
 #include <sys/resource.h>
 #include <sys/file.h>
+#else
+#include <time.h>
+#include <winsock.h>
+#include <fcntl.h>
+#define F_OK 0
+#define random rand
+#define srandom srand
+#endif
+
 #include "gnuchess.h"
 
 #define VERSION "GNU Chess 11.26.86\n\
@@ -73,7 +84,7 @@ extern struct rusage rubuf;
 struct mvlist scoredmvs[MAXMOVES];
 char forsythe[80],bkmove[10];
 int gotbook;
-long random();
+//long random();
 datum key,posp;
 int moveinbook[MAXMOVES],mbi;
 
@@ -125,7 +136,7 @@ int nmoves = 0,
     maxdepth = 0;
 char *histmp = "GAMES/chXXXXXX";
 
-long random();
+//long random();
 
 /*
  * Zero_history wipes out all history.
@@ -516,7 +527,9 @@ char *argv[];
 #endif PARALLEL
     if (compat) {
 	    printf("Chess\n");
+#ifndef _WIN32
 	    setlinebuf(stdout);
+#endif
     }
     else
       printf(VERSION);
@@ -543,8 +556,8 @@ char *argv[];
 	  {
 	      unlink(bookfl1);	/* Get rid of stray book */
 	      unlink(bookfl2);
-	      fd1 = open(bookfl1,O_CREAT,0666); /* Create empty new book */
-	      fd2 = open(bookfl2,O_CREAT,0666);
+	      fd1 = open(bookfl1,O_CREAT|O_BINARY,0666); /* Create empty new book */
+	      fd2 = open(bookfl2,O_CREAT|O_BINARY,0666);
 	      close(fd1);
 	      close(fd2);
 	      book();		/* Do the actual creation of book */
@@ -866,7 +879,11 @@ char *argv[];
 				OPPCOLOR(bd[TOMOVE].moved)))
 			      printf("%s wins\n",bd[TOMOVE].moved == WHITE ?
 				   "Black" : "White");
-			    else printf("Stale mate\n");
+			    else {
+					printf("Stale mate\n");
+					return;
+					}
+				return;
    			    continue;
 			}
 		      width = pps(bd,moves);
@@ -898,6 +915,9 @@ char *argv[];
 				 bd[TOMOVE].moved == WHITE);
 		      makemove(moves[bestmove],bd);
 		      write_history();
+
+	  pboard(bd,FALSE);
+
 	             }
 		}
 	}

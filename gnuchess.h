@@ -1,4 +1,5 @@
-/* This file contains the header definitions for CHESS.
+/*
+This file contains the header definitions for CHESS.
    Copyright (C) 1986 Free Software Foundation, Inc.
 
 This file is part of CHESS.
@@ -18,8 +19,12 @@ can know your rights and responsibilities.  It should be in a
 file named COPYING.  Among other things, the copyright notice
 and this notice must be preserved on all copies.  */
 
-#define BOOKSRC "/usr/redwood/cracraft/cc/Chess/bookin"	/* Source book */
-#define BOOKOBJ "/usr/redwood/cracraft/cc/Chess/book"  	/* DBM book(s) */
+/*#define BOOKSRC "/usr/redwood/cracraft/cc/Chess/bookin"	/* Source book */
+/*#define BOOKOBJ "/usr/redwood/cracraft/cc/Chess/book"  	/* DBM book(s) */
+
+#define BOOKSRC "bookin"	/* Source book */
+#define BOOKOBJ "book"  	/* DBM book(s) */
+
 /*
  * The following entry is used whenever the program tries to be clever
  * and send data to the GNU Chess maintainers. Entries within the string

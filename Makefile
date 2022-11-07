@@ -38,11 +38,11 @@
 # you can increase these values by 1. For example, when we
 # go from a one-SUN configuration to 7 SUN's, we increase DEPTH
 # to 4 and MAXQUIES to 7.
-CFLAGS = -DRANDOM -DQUIES -DMAXQUIES=6 -DDEPTH=3 -O
+CFLAGS = -DRANDOM -DQUIES -DMAXQUIES=6 -DDEPTH=3 -DHASH -O
 
 # Source and object files in the distribution
-SRCS = alphabeta.c book.c gen.c hash.c main.c moves.c parallel.c pps.c util.c
-OBJS = alphabeta.o book.o gen.o hash.o main.o moves.o parallel.o pps.o util.o
+SRCS = alphabeta.c book.c gen.c hash.c main.c moves.c parallel.c pps.c util.c dbm.c
+OBJS = alphabeta.o book.o gen.o hash.o main.o moves.o parallel.o pps.o util.o dbm.o
 
 # General non-source files, including header files
 NSRCS = CHANGES COPYING MAN-PAGE README SAMPLE-GAME TODO Makefile gnuchess.h\
@@ -57,34 +57,34 @@ SRCS2 = tbl_gen.c tbl_genpc.c tbl_genpwn.c Bitmapper/*.c Bitmapper/*.h Xchess/*
 DIST = $(NSRCS) $(SRCS) $(SRCS2)
 
 gnuchess: $(OBJS)
-	$(CC) -o gnuchess $(CFLAGS) $(OBJS) -ldbm
+	$(CC) -o gnuchess $(CFLAGS) $(OBJS)
 
 alphabeta.o: alphabeta.c gnuchess.h
-	cc -c $(CFLAGS) alphabeta.c 
+	$(CC) -c $(CFLAGS) alphabeta.c 
 
 book.o: book.c gnuchess.h
-	cc -c $(CFLAGS) book.c
+	$(CC) -c $(CFLAGS) book.c
 
 gen.o:	gen.c gnuchess.h
-	cc -c $(CFLAGS) gen.c 
+	$(CC) -c $(CFLAGS) gen.c 
 	
 hash.o: hash.c gnuchess.h
-	cc -c $(CFLAGS) hash.c 
+	$(CC) -c $(CFLAGS) hash.c 
 
 main.o: main.c gnuchess.h
-	cc -c $(CFLAGS) main.c 
+	$(CC) -c $(CFLAGS) main.c 
 
 moves.o:moves.c gnuchess.h
-	cc -c $(CFLAGS) moves.c 
+	$(CC) -c $(CFLAGS) moves.c 
 
 parallel.o: parallel.c gnuchess.h
-	cc -c $(CFLAGS) parallel.c
+	$(CC) -c $(CFLAGS) parallel.c
 
 pps.o:  pps.c gnuchess.h
-	cc -c $(CFLAGS) pps.c 
+	$(CC) -c $(CFLAGS) pps.c 
 
 util.o: util.c gnuchess.h
-	cc -c $(CFLAGS) util.c 
+	$(CC) -c $(CFLAGS) util.c 
 
 dist:
 	tar cvf - $(DIST) > /tmp/gnuchess.tar
