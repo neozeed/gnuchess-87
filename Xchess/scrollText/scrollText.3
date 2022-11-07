@@ -1,0 +1,261 @@
+.TH SCROLLTEXT 3 "14 September 1986"
+.UC
+.SH NAME
+scrollText - Multi-font scrollable text windows for X
+.SH SYNOPSIS
+.nf
+.B #include <X/Xlib.h>
+.B #include "scrollText.h"
+.PP
+.B "int TxtGrab(textWin, program, mainFont, bg, fg, cur)"
+Window textWin;
+char *program;
+FontInfo *mainFont;
+int bg, fg, cur;
+.PP
+.B int TxtRelease(w)
+Window w;
+.PP
+.B int TxtAddFont(textWin, fontNumber, newFont, newColor)
+Window textWin;
+int fontNumber;
+FontInfo *newFont;
+int newColor;
+.PP
+.B int TxtWinP(w)
+Window w;
+.PP
+.B int TxtClear(w)
+Window w;
+.PP
+.B int TxtWriteStr(w, str)
+Window w;
+char *str;
+.PP
+.B int TxtJamStr(w, str)
+Window w;
+char *str;
+.PP
+.B int TxtRepaint(w)
+Window w;
+.PP
+.B int TxtFilter(evt)
+XEvent *evt;
+.SH DESCRIPTION
+The
+.I scrollText
+package implements a multi-font, multi-color, scrollable text window abstraction
+which runs over the X Window System.
+The package supports any number of windows each with its own scroll bar
+and character buffer.
+Each window can have up to eight fonts loaded.  A color may be
+specified for each loaded font.
+The fonts can be mixed freely using a change font character
+control sequence.
+The scrolling operations supported are scroll relative
+to scroll bar,  line to top,
+and top line to here.
+The size of the character buffer for each window is limited only by
+the process space of the controlling program.
+.PP
+.B TxtGrab
+takes control of a previously created window, \fItextWin\fP,
+and makes it into a
+scrollable output window.
+The string
+.I program
+is used to look up X defaults for the package (see section
+\fIX Defaults\fP).
+The parameter
+.I mainFont
+is the initial font used for drawing text in the window.  This
+font is loaded into slot zero.
+.I TxtGrab
+assumes this record is fully filled (including the width table).
+The X library routine
+.I XOpenFont
+can be used to obtain fully filled font record structures.
+Additional fonts can be loaded using
+.I TxtAddFont
+(described below).
+The pixel value \fIfg\fP will be used to draw the scroll bar and
+is also used as the initial color for
+.I mainFont.
+The pixel value \fIbg\fP will be used as the background for drawing all text.
+\fIbg\fP is also used as the background for the scroll bar subwindow.
+The color of the text cursor is set to
+.I cur.
+In order for the text window to work properly,  the programmer
+must select \fIExposeRegion\fP and \fIExposeCopy\fP events
+on the window in addition to any other events the programmer
+might wish to register.
+The routine returns a non-zero value if the window was sucessfully
+grabbed.
+.PP
+.B TxtRelease
+releases control of a previously grabbed window.
+All resources consumed by the text window package are reclaimed.
+The window itself is
+.I not
+destroyed.
+.PP
+.B TxtAddFont
+loads a new font so that it can be used in a previously grabbed
+text window.
+The parameter
+.I fontNumber
+is used to specify the slot for the new font.
+There are eight font slots numbered 0 through 7.
+If there is already a font in the specified slot,
+it will be replaced with the new one and an automatic redraw
+of the screen contents will take place.
+See
+.I TxtWriteStr
+and
+.I TxtJamStr
+for details on using multiple fonts.
+The pixel value
+.I newColor
+specifies the foreground color for the font.  If TXT_NO_COLOR
+is specified,  the color will default to the foreground color
+supplied when the window was grabbed.
+The programmer can change just the color of a font by specifing
+a null font for a given slot.
+The routine returns a non-zero value if the font
+was sucessfully loaded.
+.PP
+.B TxtWinP
+returns a non-zero value if the specified window has been previously
+grabbed using
+.I TxtGrab.
+If it is not a text window,  the routine returns zero.
+.PP
+.B TxtClear
+clears the specified window of its contents and resets the
+current writing position to the upper left hand corner
+of the screen.
+The routine also \fIclears the contents of the text window
+buffer and resets the scroll bar\fP.
+The routine returns zero if the window is not a text window.
+This procedure should be used \fIinstead\fP of the
+X library call
+.I XClear.
+.PP
+.B TxtWriteStr
+writes a null-terminated string into the specified text window.
+The text is always appended to the end of the text buffer.
+If the scroll bar is positioned such that the end of the
+text is not visible,  an automatic scroll to the bottom will
+be done before the text is appended.
+Non-printable ASCII characters are ignored.
+The newline character (\\n) causes the current text position
+to advance one line and start at the left.
+Tabs are not supported.
+Lines too wide to fit on the screen will be wrapped to the
+next line and a line wrap indicator will be drawn in the
+right margin.
+Backspace deletes the previous character.
+It will do the right thing if asked to backspace past a normal
+or wrapped line marker.
+A new text font can be specified using the sequence control-F followed
+by a digit.  
+The digit must be 0, 1, 2, or 3.
+The directive will be ignored if there is no font loaded in the
+specified slot.
+If there is no more space at the bottom of the screen,  the
+window will scroll to make room.
+The routine will return zero if it could not append the text.
+.PP
+.B TxtJamStr
+is identical to
+.I TxtWriteStr
+except the current screen position is \fInot\fP updated.
+This routine should be used if the programmer wants to
+append text to the buffer without causing the window to
+scroll.
+After the text has been added,  the programmer should
+call
+.I TxtRepaint
+to update the screen contents.
+.PP
+.B TxtRepaint
+redraws the specified scrollable text window.
+The routine repaints the entire window including the scroll bar.
+NOTE:  for handling exposure events,
+.I TxtFilter
+should be used.
+.PP
+.B TxtFilter
+handles events associated with scrollable text windows.  It
+will handle \fIExposeRegion\fP and \fIExposeCopy\fP events on
+the main window,  and \fIExposeWindow\fP and \fIButtonReleased\fP
+events in the scroll bar.
+It does \fInot\fP handle any other events.
+If it does not want to handle the event,  the routine will return zero.
+A call to this routine should be included in the main event
+loop of the programmers controlling program.
+.SH USER INTERFACE
+.PP
+The \fIscrollText\fP package supports user controlled browsing
+through a buffer built using
+.I TxtWriteStr
+or
+.I TxtJamStr.
+Along the right side of the window is a \fIscroll bar\fP window.
+The scroll bar window displays a filled square representing the
+relative position through the buffer and the relative amount of
+the buffer currently on the screen.
+Scrolling is controlled by clicking mouse buttons
+in the scroll bar.
+.PP
+This package supports three scrolling operations:  scroll to
+spot,  line to top,  and top to here.
+The
+.B middle button
+is used to select scroll to spot.
+This operation causes the screen to scroll such that the center
+of the scroll bar indicator moves to the current position of
+the mouse.
+This is used to scroll to a relative spot in the buffer.
+Line to top and top to here operations are for scrolling
+down or up some proportion of the screen.
+The
+.B left button
+selects line to top.
+This operation causes the screen to scroll such that the
+line adjacent to the mouse position becomes the top line
+of the screen.
+Thus,  clicking near the top of the scroll bar scrolls only
+a couple of lines while a click near the bottom will scroll
+almost an entire screen.
+The
+.B right button
+is used for the top to here command.
+This function causes the top line of the screen to scroll down
+to the current position of the mouse.
+This allows the user to scroll up and down by the same amounts
+if the mouse position is kept constant.
+.SH "X DEFAULTS"
+The current version of the library reads one default:
+.TP 8
+.B JumpScroll
+If on,  the line to top and top to here operations will not
+scroll to the target position smoothly.  Instead,  the window
+will be repainted once at the correct spot.
+.SH FILES
+libScroll.a - Scrollable text library
+.SH "SEE ALSO"
+Xlib - C Language X Interface, X(8C)
+.SH AUTHOR
+David Harrison,  University of California,  Berkeley
+.SH BUGS
+Sometimes when the window is resized,  the scroll bar is repainted
+without a border.
+The origin of this bug is unknown but a work-around is to iconify
+and deiconify the window forcing a complete redraw.
+.PP
+Loading large files with many font changes is slow.
+Unfortunately,  there is simply a lot of work which must
+be done.
+Resizing windows with extrodinarily large buffers may also
+take some time (the line breaks must be recomputed).

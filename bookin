@@ -1,0 +1,2845 @@
+#   This file contains the opening book for CHESS.
+#     Copyright (C) 1986 Free Software Foundation, Inc.
+#
+# This file is part of CHESS.
+#
+# CHESS is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY.  No author or distributor
+# accepts responsibility to anyone for the consequences of using it
+# or for whether it serves any particular purpose or works at all,
+# unless he says so in writing.  Refer to the CHESS General Public
+# License for full details.
+#
+# Everyone is granted permission to copy, modify and redistribute
+# CHESS, but only under the conditions described in the
+# CHESS General Public License.   A copy of this license is
+# supposed to have been given to you along with CHESS so you
+# can know your rights and responsibilities.  It should be in a
+# file named COPYING.  Among other things, the copyright notice
+# and this notice must be preserved on all copies.
+#
+# This is the GNU Chess opening book.
+#
+# The format is simple. Each record is a full game.
+# Records are separated by a blank-line
+# Each record should have a comment immediately
+# above it indicating where the game came from.
+#
+# This file is read into GNU Chess with the "book" command.
+# The result is a binary book in dbm(3) format.
+# Note that entries are put explicitly into this book
+# by the "enter" command. Any such occurrence must then
+# be followed by the "book" command. You may bypass the
+# "enter" command by using an editor to add games to this
+# file, but they must be in the proper format.
+
+#
+# Beldow vs. Von der Lasa, 500 Master Games of Chess Game 1. Added 11/10/86.
+# Partial listing of game. This is a Giuoco Piano.
+1 e2e4 e7e5 2 g1f3 b8c6 3 f1c4 f8c5 4 c2c3 d8e7 5 d2d4 c5b6 6 e1g1 d7d6
+7 a2a4 a7a5 8 c1e3 g8f6 9 d4e5 c6e5 10 f3e5 d6e5
+
+#
+# Game #1 but with different 5th move for Black. Partial listing. 11/10/86
+1 e2e4 e7e5 2 g1f3 b8c6 3 f1c4 f8c5 4 c2c3 d8e7 5 d2d4 e5d4 6 e1g1 d4c3
+7 b1c3
+
+# 
+# Botvinnik vs. Tal, World Championship Match (1960), 2nd game. Collected
+# Games of Tal, Hilary Thomas, page 3. Added 12/9/86.
+1 d2d4 g8f6 2 c2c4 c7c5 3 d4d5 e7e6 4 b1c3 e6d5 
+5 c4d5 d7d6 6 g1f3 g7g6 7 c1g5 f8g7 8 f3d2 h7h6 9 g5h4 g6g5 
+10 h4g3 f6h5 11 d2c4 h5g3 12 h2g3 e8g8 13 e2e3 d8e7 14 f1e2 f8d8 
+15 e1g1 b8d7 16 a2a4 d7e5 17 c4e5 e7e5 18 a4a5 a8b8 19 a1a2 c8d7 
+20 c3b5 d7b5 21 e2b5 b7b6 22 a5a6 b8c8 23 d1d3 c8c7 24 b2b3 e5c3 
+25 d3c3 g7c3 26 a2c2 c3f6 27 g3g4 c7e7 28 c2c4 d8c8 29 g2g3 f6g7 
+30 f1d1 c8f8 31 d1d3 g8h7 32 g1g2 h7g6 33 d3d1 h6h5 34 g4h5 g6h5 
+35 g3g4 h5g6 36 c4c2 f8h8 37 b5d3 g6f6 38 g2g3 e7e8 39 d3b5 e8e4 
+40 c2c4 e4c4 41 b3c4 f6e7 42 b5a4 g7e5 43 g3f3 h8h4 44 d1g1 f7f5 
+
+# 
+# Tal vs. Keres, Soviet Chess, Game 107, pp 258-260. Added 11/11/86.
+1 e2e4 e7e5 2 g1f3 b8c6 3 f1b5 a7a6 4 b5a4 g8f6 5 e1g1 f8e7 
+6 f1e1 b7b5 7 a4b3 e8g8 8 c2c3 d7d6 9 h2h3 c6a5 10 b3c2 c7c5 
+11 d2d4 a5c6 12 b1d2 c5d4 13 c3d4 f6d7 14 d2b3 a6a5 15 c1e3 a5a4 
+16 b3c1 e5d4 17 f3d4 c6d4 18 e3d4 e7f6 19 c1e2 c8b7 20 d1d3 d7c5 
+21 d3b5 b7e4 22 c2e4 c5e4 23 a1d1 d6d5 24 e2f4 f6d4 25 d1d4 d8f6 
+26 b5d5 a8d8 27 e1e4 d8d5 28 f4d5 f6g5 29 f2f4 g5h6 30 d4a4 h6d6 
+31 a4a5 h7h6 32 b2b4 g8h7 33 a5c5 d6a6 34 d5c3 f8d8 35 f4f5 d8d2 
+36 e4e8 a6d3 37 e8e4 d2c2 38 a2a4 c2c1 39 g1h2 d3d6 40 e4e5 c1c3 
+
+# 
+# Fischer vs. Korchnoi, Soviet Chess, pp 257-258. Added 11/11/86.
+1 e2e4 d7d6 2 d2d4 g8f6 3 b1c3 g7g6 4 f2f4 f8g7 5 g1f3 e8g8 
+6 f1e2 c7c5 7 d4c5 d8a5 8 e1g1 a5c5 9 g1h1 b8c6 10 f3d2 a7a5 
+11 d2b3 c5b6 12 a2a4 c6b4 13 g2g4 c8g4 14 e2g4 f6g4 15 d1g4 b4c2 
+16 c3b5 c2a1 17 b3a1 b6c6 18 f4f5 c6c4 19 g4f3 c4a4 20 b5c7 a8e8 
+21 c7d5 a4a1 22 c1g5 a1b2 23 g5e7 g7e5 24 f1f2 b2c1 25 f2f1 c1h6 
+26 h2h3 g6f5 27 e7f8 e8f8 28 d5e7 g8h8 29 e7f5 h6e6 30 f1g1 a5a4 
+31 g1g4 e6b3 32 f3f1 a4a3 33 g4g3 b3g3 
+
+# 
+# Nimzowitsch's Last Contribution (Main Line) to the Sicilian
+1 e2e4 c7c5 2 g1f3 b8c6 3 d2d4 c5d4 4 f3d4 d7d5 5 f1b5 d5e4 
+6 d4c6 d8d1 7 e1d1 a7a6 8 b5a4 c8d7 
+
+# 
+# Rauzer vs. Ryumin, Soviet Chess, pp 114-115
+1 e2e4 e7e5 2 g1f3 b8c6 3 f1b5 a7a6 4 b5a4 g8f6 5 e1g1 f8e7 
+6 f1e1 b7b5 7 a4b3 d7d6 8 c2c3 c6a5 9 b3c2 c7c5 10 d2d4 d8c7 
+11 b1d2 a5c6 12 a2a4 a8b8 13 a4b5 a6b5 14 d4c5 d6c5 15 d2f1 c8e6 
+16 f1e3 e8g8 17 f3g5 f8d8 18 d1f3 d8d6 19 e3f5 e6f5 20 e4f5 h7h6 
+21 g5e4 f6e4 22 c2e4 e7f6 23 c1e3 c6e7 24 b2b4 c5c4 25 g2g3 d6d7 
+26 a1a7 c7d8 27 a7d7 d8d7 28 h2h4 g8h8 29 g3g4 e7g8 30 g4g5 f6e7 
+31 e1d1 d7c7 32 f5f6 e7f6 33 g5f6 g8f6 34 e4c2 b8d8 35 e3h6 d8d1 
+36 c2d1 e5e4 37 h6f4 c7d8 38 f3e2 
+
+#
+# Lasker vs. Blackburne, 500 Master Games of Chess. Game 54. Added 11/10/86.
+# Partial listing of game. This is a Ruy Lopez.
+1 e2e4 e7e5 2 g1f3 b8c6 3 f1b5 d7d6 4 d2d4 c8d7 5 d4d5 c6b8
+6 b5d3 f8e7 7 b1c3 g8f6 8 c3e2 c7c6 9 c2c4 b8a6 10 e2g3 a6c5
+
+# 
+# Levenfish vs. Makogonov, Soviet Chess, pp 125-127
+1 e2e4 c7c5 2 g1f3 e7e6 3 d2d4 c5d4 4 f3d4 g8f6 5 b1c3 d7d6 
+6 f1e2 a7a6 7 e1g1 d8c7 8 a2a4 b8c6 9 c1e3 f8e7 10 f2f4 e8g8 
+11 d4b3 b7b6 12 e2f3 c8b7 13 d1e1 f8e8 14 a1d1 f6d7 15 e1g3 e7f8 
+16 f1f2 d7c5 17 f4f5 c6e5 18 b3d4 g8h8 19 e3g5 f8e7 20 f3h5 c7d8 
+21 g5e7 e8e7 22 f5e6 f7e6 23 d4f3 e5f3 24 h5f3 e6e5 25 f2d2 e7e6 
+26 b2b4 c5d7 27 f3g4 e6g6 28 d2d6 
+
+# 
+# Rabinovich vs. Savitzky, Soviet Chess, page 76.
+1 e2e4 e7e5 2 g1f3 b8c6 3 f1b5 a7a6 4 b5c6 b7c6 5 e1g1 d8f6 
+6 d2d4 e5d4 7 f3d4 c8b7 8 b1c3 f8b4 9 e4e5 f6g6 10 d4e2 g8e7 
+11 e2f4 g6f5 12 g2g4 
+
+# 
+# Makogonov vs. Bogatyrchuk, Soviet Chess, pp 77-78.
+1 d2d4 c7c5 2 d4d5 e7e5 3 e2e4 d7d6 4 b1c3 g7g6 5 f1c4 g8h6 
+6 g1f3 f7f6 7 h2h3 h6f7 8 c1e3 f8g7 9 d1d2 e8g8 10 g2g4 b8d7 
+11 h1g1 d7b6 12 c4e2 c8d7 13 a2a4 b6c8 14 h3h4 c8e7 15 f3h2 g8h8 
+16 h4h5 h8g8 17 h2f1 a7a6 18 f2f3 d8a5 19 a1a3 f8c8 20 f1g3 g6g5 
+21 e1f2 g7f8 22 g1a1 h7h6 23 d2c1 c8b8 24 g3f1 a5c7 25 a4a5 b8e8 
+26 f1d2 e7c8 27 d2c4 a8b8 28 c3a4 d7b5 29 a4b6 c8b6 30 c4b6 b5e2 
+31 f2e2 f8e7 32 a1b1 e7d8 33 b2b4 c5b4 34 b1b4 c7e7 35 b6c4 b8c8 
+36 c1b1 e7f8 37 e2d3 d8c7 38 b4b7 c8b8 39 a3b3 e8c8 40 b7b8 c8b8 
+41 e3b6 f8e7 42 b6c7 b8b3 43 b1b3 e7c7 44 b3b6 c7c5 45 c2c3 
+
+#
+# Sicilian Defense from MCO 12.  All games are incomplete.
+#
+# Columns 1-25 are the Najdorf variation.
+# 
+# Boey vs O'Kelly, Belgian Championship 1957.  This is an extension
+# of col 1 of the Sicilian Defense on p. 176 of MCO 12.  (Incomplete game).
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d1d2 b6b2
+9 a1b1 b2a3
+10 e4e5 d6e5
+11 f4e5 f6d7
+12 c3e4 h7h6
+13 g5h4 a3a2
+14 b1b3 b8c6
+15 d4c6 b7c6
+16 e4d6 f8d6
+17 e5d6 a6a5
+18 f1e2 a5a4
+19 b3c3 a2a1
+20 e2d1 a4a3
+21 e1g1 a3a2 
+22 d2e3 e8g8
+
+# 
+# Sicilian Defense col. 2f p. 176 MCO 12.  (Incomplete game)
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d1d2 b6b2
+9 a1b1 b2a3
+10 e4e5 d6e5
+11 f4e5 f6d7
+12 f1c4 f8b4
+13 b1b3 a3a5
+14 e1g1 e8g8
+15 g5f6 d7f6
+16 e5f6 f8d8
+17 b3b4 a5b4
+18 d2g5 g7g6
+19 f1f4 b7b6
+20 f4h4 b4f8
+21 g1f1 a8a7 
+
+# 
+# Sicilian Defense col. 3g p. 176 MCO 12 (Incomplete Game)
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d1d2 b6b2
+9 a1b1 b2a3
+10 e4e5 d6e5
+11 f4e5 f6d7
+12 f1c4 a3a5
+13 c4e6 f7e6
+14 d4e6 d7e5
+15 c3d5 a5d2
+16 e1d2 e8d7
+17 e6c7 a8a7
+18 h1e1 e5c4
+
+# 
+# Parma vs. Fischer, Havana 1965.  Sicilian Defense col. 4j p. 176
+# MCO 12.
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d1d2 b6b2
+9 a1b1 b2a3
+10 g5f6 g7f6
+11 f1e2 f8g7
+12 e1g1 f6f5
+13 f1d1 b8c6
+14 d4c6 g7c3
+15 d2e3 b7c6
+16 b1b3 a3c5
+17 e3c5 d6c5
+18 b3c3 f5e4
+19 c3c5 c8d7
+20 c5e5 f7f5
+21 g2g4 h8g8
+22 g1g2 f5g4
+23 e5e4 h7h5
+24 g2g3 e8e7
+
+# 
+# Matanovic, Sicilian Defense col. 5k p. 176 MCO 12 (partial game)
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d1d2 b6b2
+9 a1b1 b2a3
+10 g5f6 g7f6
+11 f1e2 b8c6
+12 d4c6 b7c6
+13 e1g1 a3a5
+14 g1h1 f8e7
+15 f4f5 e6f5
+16 e4f5 c8f5
+17 e2a6 a5a6
+18 f1f5 d6d5
+19 b1e1 a6b7
+20 d2h6 e8c8
+21 h6h3 b7d7
+22 c3a4 
+
+# col. 6a
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d1d2 b6b2
+9 a1b1 b2a3
+10 f4f5 b8c6
+11 f5e6 f7e6
+12 d4c6 b7c6
+13 e4e5 d6e5
+14 g5f6 g7f6
+15 c3e4 f8e7
+16 f1e2 h7h6
+17 c2c4 f6f5
+18 b1b3 a3a4
+19 e1g1 f5e4
+20 g1h1 c6c5
+21 d2c3 a4c6
+22 c3e5 h8f8
+
+# col. 7d
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d1d2 b6b2
+9 a1b1 b2a3
+10 f4f5 b8c6
+11 f5e6 f7e6
+12 d4c6 b7c6
+13 e4e5 f6d5
+14 c3d5 c6d5
+15 f1e2 d6e5
+16 e1g1 a8a7
+17 g1h1 a3c5
+18 c2c4 d5d4
+19 e2h5 g7g6
+20 h5d1 f8e7
+21 d1a4 e8d8
+22 f1f7 h7h6
+23 g5h6 e5e4
+
+# col. 8
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d1d2 b6b2
+9 d4b3 b8d7
+10 g5f6 g7f6
+11 f1e2 h7h5
+12 e1g1 b2a3
+13 a1d1 f8e7
+14 g1h1 d7c5
+15 e2f3 a8a7
+16 b3c5 a3c5
+
+# col. 9g; Minic-Barczay, Varna 1967 (partial game)
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d1d2 b6b2
+9 d4b3 b8c6
+10 f1d3 d6d5
+11 g5f6 g7f6
+12 c3a4 b2a3
+13 a4b6 d5d4
+14 e1g1 a8b8
+15 f4f5 a3b4
+16 d2b4 f8b4
+17 b6c8 b8c8
+18 f5e6 f7e6
+19 f1f6 e8e7
+20 a1f1 c6e5
+
+# col. 10i; Matulovic-Kavalek, Sousse 1967
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d1d2 b6b2
+9 d4b3 b8c6
+10 a1b1 b2a3
+11 g5f6 g7f6
+12 f1d3 f8g7
+13 e1g1 e8g8
+14 f1f3 g8h8
+15 f3h3 c6e7
+16 f4f5 e6f5
+17 e4f5 c8f5
+18 d3f5 e7f5
+19 c3d5
+
+# col. 11b; Joppen-Bronstein, Belgrade 1954 (partial game)
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d4b3 b6e3
+9 d1e2 e3e2
+10 f1e2 b8d7
+11 a2a4 f8e7
+12 e1c1 h7h6
+13 g5h4 e6e5
+14 f4f5 b7b6
+15 e2f3 c8b7
+
+# col. 12e; Rajkovic-Udovcic, Yugoslav Chp. 1962 (partial game)
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 d8b6
+8 d4b3 b8d7
+9 d1f3 f8e7
+10 e1c1 b6c7
+11 f1d3 h7h6
+12 g5h4 g7g5
+13 f4g5 d7e5
+14 f3e2 f6g4
+15 b3d4 h6g5
+16 h4g3 c8d7
+17 d4f3 c7c5
+
+# col. 13i; Fischer-Vukovic (partial game)
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 f8e7
+8 d1f3 d8c7
+9 e1c1 b8d7
+10 g2g4 b7b5
+11 g5f6 d7f6
+12 g4g5 f6d7
+13 a2a3 a8b8
+14 h2h4 b5b4
+15 a3b4 b8b4
+16 f1h3 e8g8
+17 d4e6 f7e6
+18 h3e6 g8h8
+19 c3d5 c7c4
+20 e6f5 f8f5
+21 e4f5 c8b7
+22 h1e1 e7f8
+
+# col. 14m Parma-Tatai, Athens 1968 (partial game)
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 b7b5
+8 e4e5 d6e5
+9 f4e5 d8c7
+10 e5f6 c7e5
+11 f1e2 e5g5
+12 d1d3 a8a7
+13 c3e4 g5e5
+14 d4f3 e5b2
+15 e1g1 a7d7
+16 d3e3 c8b7
+17 a1b1 b2c2
+18 f3g5 c2c6
+19 f6g7 f8g7
+
+# col. 15; slight advantage for white.
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 f2f4 h7h6
+8 g5h4 d8b6
+9 d1d3 b6b2
+10 a1b1 b2a3
+11 e4e5 f6d5
+12 c3d5 a3d3
+13 f1d3 e6d5
+14 e5e6
+
+# col. 16c; Fichtl-Dolezal, CSSR 1954
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 d1f3 b8d7
+8 e1c1 d8c7
+9 f3g3 b7b5
+10 f1b5 a6b5
+11 d4b5 c7b8
+12 b5d6 f8d6
+13 g3d6 b8d6
+14 d1d6 h7h6
+15 g5f6 d7f6
+16 h1d1 c8b7
+17 f2f3
+
+# col. 17e; Vasyukov-Zukharov, USSR 1960
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 e7e6
+7 d1d2 b8c6
+8 e1c1 h7h6
+9 g5h4 f6e4
+10 d2f4 e4g5
+11 d4c6 b7c6
+12 f4a4 d8b6
+13 f2f4 g5h7
+14 f4f5 a8b8
+15 f5e6 c8e6
+16 f1c4
+
+# col. 18g (somewhat questionable)
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1g5 b8d7
+7 f1c4 d8a5
+8 d1d2 e7e6
+9 e1c1 b7b5
+10 c4b3 c8b7
+11 h1e1 a8c8
+12 e4e5 d7e5
+13 d4e6 f7e6
+14 e1e5 d6e5
+15 g5f6
+
+# col. 19m; Yanofsky-Bolbochan, Stockholm 1962
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 f1e2 e7e5
+7 d4b3 f8e7
+8 e1g1 e8g8
+9 f2f4 b7b5
+10 a2a3 c8b7
+11 e2f3 b8d7
+12 g2g3 a8c8
+13 d1e1 d7b6
+14 g1h1 b6c4
+15 b3d2 d8d7
+16 d2c4 c8c4
+17 c1d2 d6d5
+
+# col. 20p
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 f1e2 e7e5
+7 d4b3 f8e7
+8 e1g1 e8g8
+9 c1e3 b8d7
+10 a2a4 b7b6
+11 d1d2 c8b7
+12 f2f3 d8c7
+13 f1d1 f8c8
+14 b3c1
+
+# col. 21b
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 g2g3 e7e5
+7 d4e2 f8e7
+8 f1g2 e8g8
+9 e1g1 b7b5
+10 h2h3 c8b7
+11 c3d5 f6d5
+12 e4d5 b8d7
+13 a2a4 d7c5
+14 e2c3 d8d7
+15 a4b5 a6b5
+16 a1a8 f8a8
+
+# col. 22
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 f2f4 e7e6
+7 d1f3 d8b6
+8 d4b3 b8c6
+9 f1d3 f8e7
+10 c1e3 b6c7
+11 e1g1 e8g8
+12 a1e1 c6b4
+
+# col. 23f
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 c1e3 e7e5
+7 d4b3 c8e6
+8 d1d2 b8d7
+9 f2f3 f8e7
+10 g2g4 b7b5
+11 g4g5 f6h5
+12 e1c1 e8g8
+13 h1g1 a8c8
+14 c3e2
+
+# col. 24k; Kotkov-Polugayevski, USSR 1959
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 f1c4 e7e6
+7 e1g1 f8e7
+8 c4b3 e8g8
+9 f2f4 b7b5
+10 a2a3 c8b7
+11 f4f5 e6e5
+12 d4e2 b8d7
+13 e2g3 d7c5
+14 b3d5 b7d5
+15 e4d5 a8c8
+16 c1g5 c5d7
+17 g5f6 d7f6
+18 c3e4 c8c4
+
+# col. 25o; Ciocaltea-Minic, Bucharest 1966
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 a7a6
+6 f1c4 e7e6
+7 c4b3 b7b5
+8 f2f4 c8b7
+9 f4f5 e6e5
+10 d4e2 b8d7
+11 e1g1 f8e7
+12 e2g3 a8c8
+13 c1g5 e8g8
+
+#
+# Yugoslav Attack
+#
+
+# col. 26e
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 c1e3 f8g7
+7 f2f3 e8g8
+8 d1d2 b8c6
+9 e1c1 d6d5
+10 e4d5 f6d5
+11 d4c6 b7c6
+12 c3d5 c6d5
+13 d2d5 d8c7
+14 d5a8 c8f5
+15 a8f8 g8f8
+16 d1d2 h7h5
+17 f1e2 f8g8
+18 a2a3 c7b8
+
+# col. 27i; Bikhovski-Gik, Moscow 1968
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 c1e3 f8g7
+7 f2f3 e8g8
+8 d1d2 b8c6
+9 f1c4 c8d7
+10 e1c1 d8a5
+11 c4b3 f8c8
+12 g2g4 c6e5
+13 h2h4 e5c4
+14 b3c4 c8c4
+15 d4b3 a5a6
+16 h4h5 c4c3
+17 b2c3 d7e6
+18 c1b1 a8c8
+19 e3d4 c8c4
+20 h5g6 h7g6
+
+# col. 28k
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 c1e3 f8g7
+7 f2f3 e8g8
+8 d1d2 b8c6
+9 f1c4 c8d7
+10 e1c1 d8a5
+11 c4b3 f8c8
+12 h2h4 c6e5
+13 h4h5 f6h5
+14 e3h6 e5d3
+15 c1b1 d3b2
+16 b1b2 g7h6
+17 d2h6 c8c3
+18 g2g4 h5f6
+19 g4g5 f6h5
+
+# col. 29m; Ostojic-Honfi, Monte Carlo 1968
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 c1e3 f8g7
+7 f2f3 e8g8
+8 d1d2 b8c6
+9 f1c4 c8d7
+10 e1c1 d8a5
+11 c4b3 f8c8
+12 c1b1 c6e5
+13 h2h4 e5c4
+14 b3c4 c8c4
+15 d4b3 a5c7
+16 h4h5 c4c3
+17 d2c3 c7c3
+18 b2c3 f6h5
+19 e3d4 d7e6
+20 h1e1 h5f6
+21 e4e5 d6e5
+22 d4e5 f6d5
+23 b1b2 a8c8
+
+# col. 30p; Karpov-Korchnoi, 2nd match game 1974.
+# This is a complete game; black resigns after move 23
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 c1e3 f8g7
+7 f2f3 e8g8
+8 d1d2 b8c6
+9 f1c4 c8d7
+10 h2h4 a8c8
+11 c4b3 c6e5
+12 h4h5 f6h5
+13 e1c1 e5c4
+14 b3c4 c8c4
+15 g2g4 h5f6
+16 d4e2 d8a5
+17 e3h6 g7h6
+18 d2h6 f8c8
+19 d1d3 c4c5
+20 g4g5 c5g5
+21 d3d5 g5d5
+22 c3d5 c8e8
+23 e2c3 d7c6
+24 e4e5 c6d5
+25 e5f6 e7f6
+26 h6h7 g8f8
+27 h7h8 f8e7
+28 c3d5
+
+#
+# Dragon variation
+#
+
+# col. 31
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 g2g3 b8c6
+7 f1g2 c6d4
+8 d1d4 f8g7
+9 e1g1 e8g8
+10 d4d3 c8e6
+11 c3d5 f6d5
+12 e4d5 e6f5
+
+# col. 32c; Pulsen-Cortlever, Buenos Aires 1939.
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 c1g5 f8g7
+7 d1d2 b8c6
+8 e1c1 e8g8
+9 d4b3 f8e8
+10 f2f3 a7a6
+11 c1b1 b7b5
+12 h2h4 c8e6
+13 g2g4 c6e5
+
+# col. 33h
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f2f4 b8c6
+7 d4c6 b7c6
+8 e4e5 d6e5
+9 d1d8 e8d8
+10 f4e5 f6g4
+11 c1f4 c8e6
+12 c3e4 f8g7
+13 e4g5 g7e5
+14 e1c1 d8c7
+15 g5e6 f7e6
+16 f4e5 g4e5
+17 d1e1 c7d6
+18 g2g3 e5g4
+19 f1c4 e6e5
+20 e1e2
+
+# col. 34j
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f2f4 b8c6
+7 f1b5 d8c7
+8 c3d5 f6d5
+9 e4d5 a7a6
+10 b5c6 b7c6
+11 d4c6 c8b7
+12 c1e3 f8g7
+13 e3d4 g7d4
+14 d1d4 e8g8
+15 e1g1 b7c6
+
+# col. 35l
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f2f4 b8d7
+7 f1e2 f8g7
+8 c1e3 e8g8
+9 e2f3 d7b6
+10 d1e2 e7e5
+11 d4b3 f6g4
+12 f3g4 d8h4
+13 g2g3 h4g4
+14 e2g4 c8g4
+
+# col. 36a
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f1e2 f8g7
+7 c1e3 b8c6
+8 e1g1 e8g8
+9 d4b3 c8e6
+10 f2f4 c6a5
+11 f4f5 e6c4
+12 b3a5 c4e2
+13 d1e2 d8a5
+14 g2g4 a8c8
+15 g4g5 c8c3
+16 g5f6 c3e3
+17 e2e3 g7f6
+18 c2c3 f8c8
+19 a2a3 c8c4
+20 a1e1 b7b5
+
+# col. 37c; Domnitz-Kraidman, Tel Aviv 1964
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f1e2 f8g7
+7 c1e3 b8c6
+8 e1g1 e8g8
+9 d4b3 c8e6
+10 f2f4 d8c8
+11 d1e1 f6g4
+12 e2g4 e6g4
+13 f4f5 g6f5
+14 h2h3 g4h3
+15 g2h3 f5e4
+16 e1h4 f7f5
+17 g1h1 f8f7
+18 f1g1 c6e5
+19 c3d5 c8d7
+20 b3d4 e5g6
+21 g1g6 h7g6
+22 a1g1 e7e5
+23 g1g6 d7d8
+24 e3g5 d8a5
+25 d5f6 g8f8
+26 d4e6
+
+# col. 38f; Unzicker-Geller, W. Germany-USSR 1960 (drawn)
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f1e2 f8g7
+7 c1e3 b8c6
+8 e1g1 e8g8
+9 d1d2 f6g4
+10 e2g4 c8g4
+11 f2f4 c6d4
+12 e3d4 e7e5
+13 d4e3 e5f4
+14 f1f4 g4e6
+15 f4f2 g7e5
+16 e3d4 a8c8
+17 a1d1 d8a5
+18 a2a3 c8c4
+19 c3e2 a5d2
+20 d1d2
+
+# col. 39
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f1e2 f8g7
+7 c1e3 b8c6
+8 e1g1 e8g8
+9 f2f4 d8b6
+10 d1d3 f6g4
+11 c3d5 g7d4
+12 e2g4 d4e3
+13 d3e3 b6b2
+14 g4c8 a8c8
+15 a1b1 b2a2
+16 b1b7 e7e6
+
+# col. 40h
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f1e2 f8g7
+7 c1e3 b8c6
+8 e1g1 e8g8
+9 f2f4 d8b6
+10 e4e5 d6e5
+11 f4e5 c6e5
+12 d4f5 b6b2
+13 f5e7 g8h8
+14 e3d4 b2b4
+15 d4e5 b4e7
+16 d1d4 f6e8
+17 e5g7 e8g7
+18 e2d3 c8e6
+
+# col. 41b; Smyslov-Botvinnik, match 1958
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f1e2 f8g7
+7 c1e3 b8c6
+8 h2h4 h7h5
+9 f2f3 e8g8
+10 d1d2 d6d5
+11 d4c6 b7c6
+12 e4e5 f6e8
+13 f3f4 f7f6
+14 e1c1 f6e5
+15 f4e5 g7e5
+16 g2g4 c8g4
+17 e2g4 h5g4
+18 h4h5 g6g5
+
+# col. 42d; Van den Burg-Rajkovic, Orebro 1966
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f1e2 f8g7
+7 c1e3 b8c6
+8 d4b3 e8g8
+9 f2f4 c6a5
+10 g2g4 b7b6
+11 g4g5 f6d7
+12 e1g1 c8b7
+13 e2d3 a8c8
+14 b3a5 b6a5
+15 d1e1 d7c5
+16 f4f5 g7e5
+17 e1h4 e7e6
+18 f5f6 h7h5
+19 d3e2 g8h7
+20 e2h5 f8h8
+
+# col. 43f
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f1e2 f8g7
+7 c1e3 b8c6
+8 d4b3 e8g8
+9 f2f4 c6a5
+10 g2g4 c8e6
+11 g4g5 f6d7
+12 e3d4 f7f6
+13 h2h4 f6g5
+14 d4g7 g8g7
+15 b3d4 e6g8
+16 f4f5 d8b6
+
+# col. 44
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f1e2 f8g7
+7 e1g1 b8c6
+8 d4b3 e8g8
+9 f2f4 b7b5
+10 e2f3 b5b4
+11 c3d5 f6d5
+12 e4d5 c6a5
+13 b3a5 d8a5
+14 f1e1 f8e8
+
+# col. 45i; Smyslov-Korchnoi, Moscow 1960
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 g7g6
+6 f1e2 f8g7
+7 d4b3 b8c6
+8 g2g4 b7b6
+9 f2f4 c8b7
+10 e2f3 e8g8
+11 h2h4 a7a5
+12 a2a4 c6b4
+13 h4h5 d6d5
+14 e4e5 f6g4
+15 b3d4 g4h6
+16 h5g6 f7g6
+17 d4e6 d8d7
+18 e6f8 a8f8
+19 c3b5 d5d4
+
+# Assorted Sicilians
+
+# col. 46
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 f2f3 e7e5
+6 f1b5 c8d7
+7 b5d7 b8d7
+8 d4f5 d6d5
+9 e4d5 d8a5
+10 b1c3 d7b6
+
+# col. 47h; Schweber-Najdorf, Buenos Aires 1970
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 d1d4 b8c6
+5 f1b5 c8d7
+6 b5c6 d7c6
+7 c2c4 g8f6
+8 b1c3 e7e6
+9 c1g5 f8e7
+10 e1g1 e8g8
+11 f1e1 h7h6
+12 g5h4 a7a6
+13 a1d1 d8a5
+14 d4d2 a5b6
+15 f3d4 a8c8
+16 e1e3 f8e8
+
+# col. 48i
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 d1d4 a7a6
+5 c1e3 g8f6
+6 b1c3 b8c6
+7 d4b6 d8b6
+8 e3b6 g7g6
+9 e1c1 f8h6
+10 c1b1 e8g8
+11 f3d4 c8d7
+12 f2f3 c6e5
+13 d4b3 f8c8
+14 b3a5 d7c6
+15 c3d5 c6d5
+16 e4d5 f6d7
+17 b6d4 b7b6
+
+# col. 49m; Fischer-Korchnoi, Buenos-Aires 1960
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 c5d4
+4 c2c3 d4c3
+5 b1c3 b8c6
+6 f1c4 e7e6
+7 e1g1 a7a6
+8 d1e2 g8f6
+9 f1d1 d8c7
+10 c1g5 f8e7
+11 a1c1 e8g8
+12 c4b3 h7h6
+13 g5f4 e6e5
+14 f4e3 c7d8
+15 c3d5 f6d5
+16 b3d5 c8d7
+
+# col. 50
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 d2d4 g8f6
+4 d4c5 f6e4
+5 c5d6 e7e6
+6 d1d3 e4d6
+7 b1c3 b8c6
+8 c1f4 f7f6
+9 e1c1 e6e5
+10 c3b5
+
+# Semi-closed variations
+
+# col. 51c; Pfeiffer-Kottnauer, Helsinki 1952
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 c2c3 g8f6
+4 f1d3 b8c6
+5 d3c2 c8g4
+6 h2h3 g4h5
+7 d2d3 d6d5
+8 d1e2 e7e6
+9 b1d2 f8e7
+10 d2f1 d8a5
+
+# col. 52d; Brasket-Evans, U.S. Open Chp. 1960
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 c2c3 g8f6
+4 d2d3 g7g6
+5 g2g3 f8g7
+6 b1d2 e8g8
+7 f1g2 e7e5
+8 e1g1 b8c6
+9 a2a4 h7h6
+10 d2b1 d8a5
+
+# col. 53h; Ciocaltea-Fischer, Varna 1962
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 g2g3 g7g6
+4 f1g2 f8g7
+5 e1g1 b8c6
+6 c2c3 e7e5
+7 d2d3 g8e7
+8 f3h4 e8g8
+9 f2f4 e5f4
+10 g3f4 f7f5
+11 b1d2 g8h8
+12 d2f3
+
+# col. 54k; Tarjan-Mednis, U.S. Chp. 1973
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 e7e6
+6 f1e2 g7g6
+7 d4b3
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 b1c3 g8f6
+4 e4e5 d6e5
+5 f3e5 a7a6
+6 f1e2 e7e6
+7 e1g1 d8c7
+8 e5c4 b7b5
+9 c4e3 f8d6
+10 h2h3 b8c6
+11 a2a4 b5b4
+12 c3b1 c8b7
+13 d2d3 c6d4
+14 b1d2 e8g8
+15 d2f3 d4e2
+16 d1e2 f8e8
+17 e3c4 e6e5
+18 f3g5 e5e4
+19 c4d6 c7d6
+20 g5e4 f6e4
+21 d3e4 b7e4
+22 c1e3 d6c6
+
+# col. 55o; Medina-Pomar, Santander 1947
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 b2b4 c5b4
+4 d2d4 g8f6
+5 f1d3 d6d5
+6 b1d2 d5e4
+7 d2e4 b8d7
+8 e4g5 d8c7
+9 c2c4 h7h6
+10 g5h3 g7g5
+11 h3g1 f8g7
+12 g1e2 e7e5
+13 e2g3 e5e4
+14 d1e2 e8g8
+
+#
+# Nimzowitsch-Rossolimo Attack
+
+# col. 56e; del Corral-Benko, Mallorca 1968
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 f1b5 c8d7
+4 b5d7 d8d7
+5 e1g1 b8c6
+6 f1e1 g8f6
+7 c2c3 e7e6
+8 d2d3 f8e7
+9 a2a4 e8g8
+10 b1d2 d7c7
+
+# col. 57g; Radovich-Lombardy, Leipzig 1960
+1 e2e4 c7c5
+2 g1f3 d7d6
+3 f1b5 b8c6
+4 e1g1 a7a6
+5 b5c6 b7c6
+6 d2d4 c5d4
+7 d1d4 e7e5
+8 d4d3 f7f6
+9 c2c4 c8e6
+10 b1c3 d8c7
+
+# col. 58j; Gurgenidze-Osnos, Alma Ata 1969
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 f1b5 e7e6
+4 b1c3 g8e7
+5 e1g1 a7a6
+6 b5c6 e7c6
+7 d2d4 c5d4
+8 f3d4 d7d6
+9 d4c6 b7c6
+10 d1g4 g7g6
+11 e4e5 d6d5
+12 c1g5 f8e7
+
+# col. 59m
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 f1b5 g7g6
+4 e1g1 f8g7
+5 c2c3 g8f6
+6 f1e1 e8g8
+7 d2d4 c5d4
+8 c3d4 d7d5
+9 e4e5 f6e4
+10 b1c3 e4c3
+11 b2c3 c6a5
+12 c1g5 c8f5
+13 f3d2 f8e8
+
+# col. 60o
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 f1b5 g7g6
+4 e1g1 f8g7
+5 f1e1 e7e5
+6 f1e1 e8g8
+7 d2d4 c5d4
+8 c3d4 d7d5
+9 e4e5 f6e4
+10 b1c3 e4c3
+11 b2c3 c6a5
+12 c1g5 c8f5
+13 f3d2 f8e8
+
+#
+# Richter-Rauzer attack
+#
+
+# col. 61c; Barczay-Szilagyi, Hungarian Chp. 1969
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 g5f6 g7f6
+8 d4b3 h8g8
+9 g2g3 f6f5
+10 d1d2 f8g7
+11 e4f5 d7f5
+12 f1g2 d8d7
+13 e1g1 g7c3
+14 b2c3 f5h3
+15 g2h3 d7h3
+
+# col. 62e
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 d4b3 h7h6
+8 g5h4 a8c8
+9 f1e2 g7g5
+10 h4g3 h6h5
+11 h2h4 g5g4
+12 g3f4 c6e5
+13 d1d4 e5g6
+14 f4g5 f8g7
+15 e1g1
+
+# col. 63g; Matulovic-Masic, Sombor 1968
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 f2f4 d8b6
+8 d4b3 f6g4
+9 d1e2 c6d4
+10 c3d5 d4e2
+11 d5b6 a7b6
+12 e1e2 h7h6
+13 g5h4 g7g5
+14 h4g3 g5f4
+15 g3f4 f8g7
+16 c2c3 d7c6
+
+# col. 64j; Liberzo-Stein, USSR Chp. 1969-70.  Complete game (draw).
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 d1d3 c6d4
+8 d3d4 d8a5
+9 f2f4 e7e5
+10 d4d3 f8e7
+11 e1c1 d7c6
+12 c1b1 e5f4
+13 g5f4 e8g8
+14 f1e2 f8e8
+15 e2f3 e7f8
+16 c3d5 f6d7
+17 d3d2 a5d2
+18 d1d2 a8c8
+19 h1d1 d7e5
+20 b2b3
+
+# col. 65m; Bronstein-Stein, USSR 1969
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 d1d3 c6d4
+8 d3d4 d8a5
+9 f1e2 e7e5
+10 d4d3 a5c7
+11 e2g4 f8e7
+12 g5f6 e7f6
+13 e1c1 f6e7
+14 c3b5 d7b5
+15 d3b5 c7c6
+16 b5d5 c6d5
+17 d1d5
+
+# col. 66b; Benko-R. Byrne, US Open Chp. 1968
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 d1d2 a8c8
+8 e1c1 c6d4
+9 d2d4 d8a5
+10 g5d2 a7a6
+11 f1c4 a5c5
+12 d4c5 c8c5
+13 c4b3 g7g6
+14 d2e3 c5c8
+15 e3d4 f8g7
+16 c3d5 f6h5
+17 d4g7 h5g7
+18 e4e5 c8c6
+19 d5b4 c6b6
+
+# col. 66b alternate; Polgar-Nagy, Hungarian Chp. 1972
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 d1d2 a8c8
+8 e1c1 c6d4
+9 d2d4 d8a5
+10 g5d2 e7e5
+11 d4d3 a7a6
+12 c1b1 h7h6
+13 f2f3 a5c7
+14 g2g3 f8e7
+15 h2h4 b7b5
+
+# col. 67c; Suetin-Gheorghiu, Hastings 1967/8.  Draw.
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 d1d2 a8c8
+8 e1c1 c6d4
+9 d2d4 d8a5
+10 g5e3 a7a6
+11 f2f3 e7e6
+12 d4b6 a5b6
+13 e3b6 d7c6
+14 f1c4 c6e4
+15 c4e6 f7e6
+16 c3e4 f6e4
+17 f3e4 f8e7
+18 h1f1 e7g5
+19 c1b1 e8e7
+20 c2c3 h8f8
+21 b1c2 f8f1
+22 d1f1 c8f8
+
+# col. 68d
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 d1d2 a8c8
+8 e1c1 c6d4
+9 d2d4 d8a5
+10 f2f4 e7e6
+11 e4e5 d6e5
+12 f4e5 c8c3
+13 g5d2 a5a2
+14 d2c3 g7g6
+
+# col. 69fA1; Janosevic-Larsen, Belgrade 1964
+# Note: column 69 lists about a dozen other variations, some of which look
+# fairly interesting.  Maybe later. --asp
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 d1d2 a8c8
+8 e1c1 c6d4
+9 d2d4 d8a5
+10 f2f4 c8c3
+11 b2c3 e7e5
+12 d4b4 a5b4
+13 c3b4 f6e4
+14 f1c4 b7b5
+15 c4d5 e4c3
+16 f4e5 h7h6
+17 g5h4 g7g5
+18 h4g3 c3e2
+19 c1b2 e2g3
+20 h2g3 f8g7
+
+# col. 70g; Bednarski-Simagin, Polanica Zdroj 1968
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 c8d7
+7 d1d2 a8c8
+8 e1c1 c6d4
+9 d2d4 c8c3
+10 d4c3 f6e4
+11 c3e3 e4g5
+12 e3g5 d8b6
+13 f1c4 e7e6
+14 g5g3 g7g6
+15 c4b3 f8e7
+16 h2h4 h7h5
+17 h1e1 b6b4
+18 g3e3 a7a5
+19 e3d4
+
+# col. 71d
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d2 f8e7
+8 e1c1 c6d4
+9 d2d4 e8g8
+10 f2f4 h7h6
+11 g5h4 d8a5
+12 f1c4 e6e5
+13 f4e5 d6e5
+14 d4d3 a5c5
+15 h4f6 e7f6
+
+# col. 72g
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d2 f8e7
+8 e1c1 c6d4
+9 d2d4 e8g8
+10 f2f4 d8a5
+11 f1c4 c8d7
+12 c4b3 d7c6
+13 h1f1 b7b5
+14 g5f6 e7f6
+15 d4d6 f6c3
+16 d6c6 a8c8
+17 c6d7 c8d8
+18 d7e7 c3d2
+19 c1b1 d2f4
+20 d1d8 a5d8
+
+# col. 73i
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d2 f8e7
+8 e1c1 e8g8
+9 d4b3 d8b6
+10 f2f3 a7a6
+11 g2g4 f8d8
+12 g5e3 b6c7
+13 h2h4 b7b5
+14 g4g5 f6d7
+15 g5g6 f7g6
+16 h4h5 g6h5
+17 h1h5 d7f6
+18 h5g5 c6e5
+19 d2g2 e7f8
+20 f3f4 e5c4
+21 f1c4 b5c4
+22 b3d4 a8b8
+23 d1g1 b8b7
+
+# col. 74; Tal-Larsen, match 1969
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d2 f8e7
+8 e1c1 e8g8
+9 d4b3 a7a6
+10 g5f6 g7f6
+11 f1e2 g8h8
+12 e2h5 c8d7
+13 f2f4 b7b5
+14 c1b1
+
+# col. 75k
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d2 f8e7
+8 e1c1 e8g8
+9 d4b5 d8a5
+10 g5f6 e7f6
+11 b5d6 f8d8
+12 f2f4 e6e5
+13 d2d5 a5c7
+14 f4f5 c6d4
+15 d6b5 c7a5
+16 d5c4 c8f5
+17 b2b4 a5a6
+
+# col. 76b; Spasski-Larsen, Santa Monica 1966
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d2 f8e7
+8 e1c1 e8g8
+9 f2f4 h7h6
+10 g5h4 e6e5
+11 d4f5 c8f5
+12 e4f5 d8a5
+13 c1b1 a8d8
+14 h4f6 e7f6
+15 c3d5 a5d2
+16 d5f6 g7f6
+17 d1d2 e5f4
+
+# col. 77e; Kujpers-Minev, Halle 1967
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d2 f8e7
+8 e1c1 e8g8
+9 f2f4 d6d5
+10 e4e5 f6d7
+11 h2h4 d7b6
+12 d2e3 c8d7
+13 g5e7 d8e7
+14 h4h5 c6a5
+15 d4b3 a5c4
+16 e3d4 f8c8
+17 c1b1 a7a5
+18 f4f5 a5a4
+19 f5f6 e7f8
+20 h1h3 c4b2
+21 b1b2 b6c4
+22 f1c4 c8c4
+23 d4d2
+
+# col. 78h
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d2 a7a6
+8 e1c1 c8d7
+9 f2f4 h7h6
+10 g5h4 f6e4
+11 d2e1 e4f6
+12 d4f5 d8a5
+13 f5d6 f8d6
+14 d1d6 e8c8
+15 d6d1 e6e5
+16 f1c4 e5f4
+17 c3e4 d7e6
+18 c4e6 f7e6
+19 e4d6 c8b8
+20 e1e6 h8f8
+
+# col. 79j; O'Kelly-Simagin corr. 1964
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d2 a7a6
+8 e1c1 h7h6
+9 g5h4 f6e4
+10 d2f4 e4g5
+11 d4c6 b7c6
+12 f4a4 d8b6
+13 f2f4 g5h7
+14 f4f5 f8e7
+15 c3e4 a8b8
+16 a4a3 b6b5
+
+# col. 80k; Di Camillo-R. Byrne, US Open Chp. 1958
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d2 h7h6
+8 g5f6 g7f6
+9 e1c1 a7a6
+10 f2f4 c8d7
+11 f1e2 h6h5
+12 c1b1 d8b6
+13 d4b3 e8c8
+14 h1f1 f8e7
+15 c3a4 b6a7
+16 c2c4 c6d4
+
+# col. 81b
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d4c6 b7c6
+8 e4e5 d6e5
+9 d1f3 f8e7
+10 f3c6 c8d7
+11 c6f3 e5e4
+12 c3e4 f6e4
+13 g5e7 d8a5
+
+# col. 82e
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1g5 e7e6
+7 d1d3 f8e7
+8 a1d1 e8g8
+9 f1e2 c8d7
+10 e1g1 c6d4
+11 d3d4 d7c6
+12 g1h1 d8a5
+13 f2f4 f8e8
+
+# assorted other anti-Dragons
+
+# col. 83
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 h2h3 g7g6
+7 c1e3 f8g7
+8 d1d2 e8g8
+9 e1c1 c6d4
+10 e3d4 d8a5
+11 c1b1 e7e5
+12 d4e3 c8e6
+
+# col. 84i; Karaklajic-Taimanov, Yugoslavia-USSR, match 1956
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 c1e3 f6g4
+7 f1b5 g4e3
+8 f2e3 c8d7
+9 e1g1 e7e6
+10 b5c6 b7c6
+11 e4e5 f8e7
+12 d1h5 e8g8
+13 e5d6 e7d6
+14 c3e4 d6e7
+15 a1d1 d8c7
+16 d4b3 h7h6
+
+# col. 85
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 d4e2 e7e6
+7 g2g3 d6d5
+8 e4d5 f6d5
+9 f1g2 d5c3
+10 d1d8 e8d8
+11 e2c3 c8d7
+12 c1d2 f8e7
+
+# col. 86c; Carcia-Pomar, Havana 1969
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 f1c4 e7e5
+7 d4e2 c8e6
+8 c4e6 f7e6
+9 e1g1 f8e7
+10 f2f4 e8g8
+11 e2g3 e5f4
+12 f1f4 d8b6
+13 g1h1 a8d8
+14 b2b3 d6d5
+15 e4d5 f6d5
+16 f4f8 e7f8
+17 c3d5 d8d5
+18 d1e1 c6d4
+19 c1e3 f8c5
+
+# col. 87
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 f1c4 d8b6
+7 d4b3 e7e6
+8 e1g1 f8e7
+9 c1e3 b6c7
+10 f2f4 e8g8
+11 c4d3 a7a6
+12 d1f3
+
+# col. 88
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 f1c4 e7e6
+7 c1e3 d8c7
+8 d1e2 a7a6
+9 c4b3 c6a5
+10 g2g4 b7b5
+11 g4g5 f6d7
+12 e1c1 d7c5
+
+# col. 89mA; Spasjevic-Ostojic, Belgrade 1966 (draw)
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 f1c4 e7e6
+7 c1e3 f8e7
+8 d1e2 a7a6
+9 e1c1 e8g8
+10 c4b3 d8c7
+11 g2g4 c6d4
+12 d1d4 e6e5
+13 d4c4 c7d8
+14 g4g5 f6e8
+15 h1g1 c8d7
+16 c3d5 d7b5
+17 e3b6 d8d7
+18 e2g4 e7d8
+19 g4d7 b5d7
+20 c4c3 d7e6
+21 b6d8 a8d8
+22 d5e3 d8d7
+23 b3a4 d7c7
+
+# col. 90o; Bogdanovic-Shamkovich, Sarajevo 1963
+1 e2e4 c7c5
+2 g1f3 b8c6
+3 d2d4 c5d4
+4 f3d4 g8f6
+5 b1c3 d7d6
+6 f1c4 e7e6
+7 c1e3 f8e7
+8 d1e2 e8g8
+9 e1c1 c6d4
+10 e3d4 d8a5
+11 e4e5 d6e5
+12 d4e5 b7b6
+13 c3b5 c8a6
+14 e5c3 a5a4
+15 d1d4 a6b5
+16 c4b5 a4a2
+17 h1d1 f8d8
+18 d4a4 d8d1
+19 e2d1 a2d5
+20 d1d5 f6d5
+21 c3d4 e7g5
+22 c1b1 h7h5
+23 b5c6 a8d8
+24 a4a7 d5b4
+25 c6d7 b4c6
+
+# columns 91-185 punted for now
+
+#
+# Catalan Opening.  From pp. 300ff of MCO 12.
+#
+
+# Queen's Catalan
+
+# col. 1c; Kramer-Fichtl, Varna Olympics 1962
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 g1f3 f8e7
+5 f1g2 e8g8
+6 e1g1 b8d7
+7 b1c3 c7c6
+8 b2b3 b7b6
+9 c1b2 c8b7
+10 d1c2 a8c8
+11 a1d1 d8c7
+12 e2e4 d5e4
+13 c3e4 f6e4
+14 c2e4 c6c5
+15 d4d5 e7f6
+16 e4c2 e6d5
+17 c4d5 f6b2
+18 c2b2 c8d8
+
+# col. 2f
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 g1f3 f8e7
+5 f1g2 e8g8
+6 e1g1 b8d7
+7 b1c3 d5c4
+8 e2e4 c7c6
+9 a2a4 a7a5
+10 d1e2 d7b6
+11 f1d1 e7b4
+12 f3e5 d8e7
+13 c1e3 c8d7
+14 e5c4 b6c4
+15 e2c4 e6e5
+16 d4e5 f6g4
+
+# col. 3i; Geller-Medina, Beverwijk 1965
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 g1f3 f8e7
+5 f1g2 e8g8
+6 e1g1 b8d7
+7 d1c2 b7b6
+8 c4d5 f6d5
+9 b1c3 c8b7
+10 c3d5 b7d5
+11 e2e4 d5b7
+12 f1d1 c7c5
+13 d4d5 e6d5
+14 e4d5 e7f6
+15 h2h4 h7h6
+
+# col. 4k; Geller-Bisguier, Bled 1961
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 g1f3 f8e7
+5 f1g2 e8g8
+6 e1g1 b8d7
+7 d1c2 c7c6
+8 b2b3 b7b6
+9 c1b2 c8b7
+10 b1c3 a8c8
+11 a1d1 b6b5
+12 c4c5 b5b4
+13 c3b1 f6e4
+14 f3e1 f7f5
+15 e1d3 a7a5
+16 d3f4 f8f6
+17 f2f3 e4g5
+
+# col. 5m; Benko-Pachman, Budapest 1948
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 g1f3 f8e7
+5 f1g2 e8g8
+6 e1g1 b8d7
+7 d1c2 c7c6
+8 b1d2 b7b6
+9 e2e4 c8b7
+10 b2b3 a8c8
+11 f1d1 d8c7
+12 c1b2 f8d8
+13 a1c1 c7b8
+14 c2b1 a7a5
+15 f3e5 b8a8
+
+# col. 6
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 g1f3 f8e7
+5 f1g2 e8g8
+6 e1g1 c7c6
+7 b1c3 b7b6
+8 f3e5 a7a5
+9 d1c2 c8a6
+10 f1d1 b6b5
+
+# col. 7d; Evans-Poschel, US Jr. Chp. 1947
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 g1f3 c7c5
+5 c4d5 f6d5
+6 f1g2 c5d4
+7 e1g1 f8c5
+8 f3d4 e8g8
+9 a2a3 b8c6
+10 d4c6 b7c6
+11 b2b4 c5e7
+12 c1b2 e7f6
+13 d1c2 f6b2
+14 c2b2 a7a5
+
+# col. 8g; O'Kelly-Euwe, New York 1951
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 g1f3 d5c4
+5 f1g2 c7c5
+6 e1g1 b8c6
+7 d1a4 f6d7
+8 d4c5 f8c5
+9 a4c4 e8g8
+10 b1c3 a7a6
+11 c3e4 c5e7
+12 c1e3 d7b6
+13 c4b3 b6d5
+14 f1d1 d8c7
+
+# col. 9
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 g1f3 d5c4
+5 f1g2 b7b5
+6 a2a4 c7c6
+7 e1g1 c8b7
+8 f3e5 d8c8
+9 b2b3 c4b3
+10 d1b3 b5b4
+11 a4a5 f6d7
+
+# col. 10l; Keres-Korchnoi, Curacao 1962
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 g1f3 d5c4
+5 d1a4 b8d7
+6 f1g2 a7a6
+7 a4c4 c7c5
+8 d4c5 f8c5
+9 e1g1 b7b5
+10 c4h4 c8b7
+11 b1d2 c5e7
+12 d2b3 a8c8
+13 h4d4 e8g8
+14 c1d2 d7c5
+
+# col. 11 -- Accelerated Catalan
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 f1g2 d5c4
+5 d1a4 b8d7
+6 b1d2 c7c6
+7 a4c4 e6e5
+8 g1f3 d7b6
+9 c4d3 e5d4
+10 f3d4 f8e7
+11 e1g1 e8g8
+
+# col. 12e; Muller-Ratzek, Vienna 1951
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 f1g2 d5c4
+5 d1a4 c8d7
+6 a4c4 d7c6
+7 g1f3 c6d5
+8 c4d3 c7c5
+9 b1c3 d5c6
+10 e1g1 b8d7
+11 f1d1 d8b6
+12 e2e4 c5d4
+13 f3d4 f8c5
+14 d4c6 c5f2
+15 g1f1 b7c6
+16 c3a4 b6a5
+17 f1f2 a5a4
+18 d3d6
+
+# col. 13f; Smyslov-Kere, USSR Chp. 1948
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 f1g2 d5c4
+5 d1a4 c8d7
+6 a4c4 d7c6
+7 g1f3 b8d7
+8 b1c3 d7b6
+9 c4d3 f8b4
+10 e1g1 e8g8
+11 f1d1 h7h6
+12 c1d2 d8e7
+13 a2a3 b4c3
+14 d3c3 f8d8
+
+# col. 14g
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 b1c3 d5c4
+5 d1a4 b8c6
+6 f1g2 c8d7
+7 a4c4 c6b4
+8 c4b3 c7c5
+9 g1f3 c5d4
+10 f3d4 e6e5
+11 d4f3 d7e6
+12 b3a4 e6d7
+
+# col. 15; Stoltz-Vidmar, Groningen 1946
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 b1c3 f8e7
+5 f1g2 e8g8
+6 g1f3 d5c4
+7 d1a4 a7a6
+8 a4c4 b7b5
+9 c4d3 c8b7
+
+# col. 16
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 b1d2 c7c5
+5 d4c5 f8c5
+6 f1g2 b8c6
+7 g1f3 e8g8
+8 e1g1 a7a5
+9 c4d5 e6d5
+10 d2b3 c5b6
+
+# col. 17d; Mikenas-Aronin, USSR Chp. 1963
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 c7c5
+4 c4d5 e6d5
+5 g1f3 b8c6
+6 f1g2 g8f6
+7 e1g1 f8e7
+8 d4c5 e7c5
+9 b1d2 e8g8
+10 d2b3 c5b6
+11 b3d4 f8e8
+12 b2b3 c6d4
+13 f3d4 b6d4
+14 d1d4 e8e2
+
+# col. 18e
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 d5c4
+4 d1a4 c8d7
+5 a4c4 c7c5
+6 d4c5 d7c6
+7 g1f3 b8d7
+8 c1e3 g8f6
+9 f1g2 d8c7
+10 e1g1 c6d5
+11 c4a4 f8c5
+12 e3c5 c7c5
+13 b1c3 d5c6
+
+# col. 19
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 f8b4
+4 c1d2 b4d2
+5 d1d2 g8f6
+6 g1f3 e8g8
+7 f1g2 d8e7
+8 e1g1 b8c6
+9 f1c1
+
+# col. 20
+1 d2d4 d7d5
+2 c2c4 e7e6
+3 g2g3 f8b4
+4 c1d2 b4e7
+5 f1g2 g8f6
+6 g1f3 e8g8
+7 d1b3 b7b6
+8 c4d5 e6d5
+9 b1c3 c8b7
+10 e1g1
+
+# Queen's Catalan
+
+# col. 21
+1 d2d4 g8f6
+2 c2c4 e7e6
+3 g2g3 e6e5
+4 g1f3 e5d4
+5 f3d4 d7d5
+6 f1g2 d5c4
+7 d1a4 c7c6
+8 a4c4 f8e7
+9 e1g1 e8g8
+10 f1d1
+
+# col. 22
+1 d2d4 g8f6
+2 c2c4 e7e6
+3 g2g3 c7c5
+4 g1f3 c5d4
+5 f3d4 d7d5
+6 f1g2 e6e5
+7 d4f3 d5d4
+8 e1g1 b8c6
+9 e2e3 f8e7
+10 e3d4 e5d4
+
+# col. 23g
+1 d2d4 g8f6
+2 c2c4 e7e6
+3 g2g3 c7c5
+4 g1f3 c5d4
+5 f3d4 b8c6
+6 f1g2 d8b6
+7 d4c2 f8c5
+8 e2e3 e8g8
+9 b1c3 b6a6
+10 d1d2 f8d8
+11 a2a3 d7d5
+12 b2b4 d5d4
+13 c3e4
+
+# col. 24j; Smyslov-Petrosian, Moscow 1967
+1 d2d4 g8f6
+2 c2c4 e7e6
+3 g2g3 f8b4
+4 b1d2 c7c5
+5 d4c5 b4c5
+6 f1g2 b8c6
+7 g1f3 b7b6
+8 e1g1 c8b7
+9 a2a3 e8g8
+10 b2b4 c5e7
+11 c1b2 a8c8
+12 d1b1
+
+# col. 25
+1 d2d4 g8f6
+2 c2c4 e7e6
+3 g2g3 f8b4
+4 c1d2 b4d2
+5 d1d2 f6e4
+6 d2c2 f7f5
+7 f2f3 e4f6
+8 e2e4 f5e4
+9 f3e4 e6e5
+
+# Alternate openings leading to the Catalan
+# From p. 300, MCO 12
+# These should be kept after the normal openings, as they will tend 
+# to drag us into openings we don't know much about.
+
+# line C
+1 g1f3 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 d2d4
+
+# line D
+1 c2c4 g8f6
+2 d2d4 e7e6
+3 g2g3 d7d5
+
+# line E
+1 d2d4 g8f6
+2 c2c4 e7e6
+3 g2g3 d7d5
+
+#
+# The Reti Opening.  From pp. 426ff of MCO 12.
+#
+
+# col. 1c; Muller-Lilenthal, Budapest 1933
+1 g1f3 d7d5
+2 c2c4 c7c6
+3 b2b3 g8f6
+4 g2g3 c8f5
+5 c1b2 e7e6
+6 f1g2 b8d7
+7 e1g1 f8d6
+8 d2d3 e8g8
+9 b1c3 d8e7
+10 f1e1 e6e5
+11 c4d5 c6d5
+12 e2e4 d5e4
+13 d3e4 f5g6
+
+# col. 2g; Bilek-Geller, Sousse 1967
+1 g1f3 d7d5
+2 c2c4 c7c6
+3 b2b3 g8f6
+4 g2g3 c8g4
+5 f1g2 e7e6
+6 c1b2 b8d7
+7 e1g1 f8e7
+8 d2d3 e8g8
+9 b1d2 a7a5
+10 a2a3 d8b6
+11 d1c2 h7h6
+12 b2c3 f8c8
+13 f1e1 b6d8
+14 e2e4 d8f8
+
+# col. 3k; Botvinnik-Fine, Nottingham 1936
+1 g1f3 d7d5
+2 c2c4 d5c4
+3 b1a3 c7c5
+4 a3c4 b8c6
+5 g2g3 e7e5
+6 f1g2 f7f6
+7 b2b3 g8e7
+8 c1b2 e7d5
+9 e1g1 f8e7
+10 f3h4 e8g8
+11 d1b1 f8f7
+12 h4f5 c8e6
+13 f2f4 e5f4
+14 g3f4 d5b6
+15 g2e4 e6c4
+
+# col. 4n; Katetov-Alekhin, Prague 1943
+1 g1f3 d7d5
+2 c2c4 d5d4
+3 e2e3 b8c6
+4 e3d4 c6d4
+5 f3d4 d8d4
+6 b1c3 e7e5
+7 d2d3 f8c5
+8 c1e3 d4d6
+9 c3b5 d6e7
+10 e3c5 e7c5
+11 d3d4 e5d4
+12 d1d4 c5d4
+13 b5d4 c8g4
+
+# col. 5o
+1 g1f3 d7d5
+2 c2c4 d5d4
+3 e2e3 c7c5
+4 e3d4 c5d4
+5 g2g3 b8c6
+6 f1g2 g7g6
+7 d2d3 f8g7
+8 e1g1 e7e5
+9 f1e1 f7f6
+10 b2b4 c6b4
+11 d1a4 b4c6
+12 f3d4 d8d4
+13 g2c6 c8d7
+
+# col. 6
+1 g1f3 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 f1g2 f8e7
+5 e1g1 e8g8
+6 b2b3 c7c5
+7 c4d5 f6d5
+8 c1b2 b8c6
+9 d2d4 d5b4
+10 a2a3 b4a6
+11 d4c5 d8d1
+
+# col. 7
+1 g1f3 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 f1g2 f8e7
+5 b1c3 e8g8
+6 b2b3 c7c5
+7 c1b2 b8c6
+8 c4d5 e6d5
+9 a1c1 c8e6
+10 e1g1 a8c8
+11 d2d4 f8e8
+
+# col. 8g; Kashdan-Horowitz, New York 1931
+1 g1f3 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 f1g2 b8d7
+5 b2b3 c7c6
+6 e1g1 f8d6
+7 c1b2 e8g8
+8 b1c3 b7b6
+9 d2d3 c8b7
+10 e2e4 d5e4
+11 d3e4 d8c7
+12 d1e2 f8d8
+13 f1d1
+
+# col. 9h; Abroshin-Krykov corr. 1960
+1 g1f3 d7d5
+2 c2c4 e7e6
+3 g2g3 g8f6
+4 f1g2 d5c4
+5 d1a4 c8d7
+6 a4c4 d7c6
+7 e1g1 c6d5
+8 c4a4 d8d7
+9 a4c2 b8c6
+10 b1c3 d5f3
+11 g2f3 c6d4
+12 c2d3 c7c6
+
+# col. 10m; Teti-Tartakover, Semmering 1926
+1 g1f3 d7d5
+2 c2c4 e7e6
+3 g2g3 d5c4
+4 d1a4 c8d7
+5 a4c4 c7c5
+6 f3e5 b8c6
+7 e5d7 d8d7
+8 f1g2 g8f6
+9 d2d3 f8e7
+10 e1g1 c6d4
+11 b1c3 a8d8
+12 a2a4 f6d5
+
+# Barcza System
+
+# col. 11
+1 g1f3 d7d5
+2 g2g3 g8f6
+3 f1g2 c8f5
+4 e1g1 c7c6
+5 c2c4 d5c4
+6 b1a3 e7e5
+7 a3c4 e5e4
+8 f3e1 f8c5
+9 d2d3 e8g8
+10 c1e3 b8d7
+
+# col. 12d; Benko-Petrosian, Curacao 1962
+1 g1f3 d7d5
+2 g2g3 g8f6
+3 f1g2 c8f5
+4 e1g1 c7c6
+5 d2d3 b8d7
+6 b1d2 h7h6
+7 d1e1 e7e6
+8 e2e4 f5h7
+9 e1e2 f8e7
+10 e4e5 f6g8
+11 d2b3 e7f8
+12 c2c4 g8e7
+13 b3d4 e7f5
+14 d4f5 h7f5
+15 c4d5 c6d5
+16 d3d4 a7a5
+17 c1e3 f8e7
+18 f1c1 e8g8
+
+# col. 13f; Bronstein-O'Kelly, Beverwijk 1963
+1 g1f3 d7d5
+2 g2g3 g8f6
+3 f1g2 c7c5
+4 e1g1 e7e6
+5 d2d3 b8c6
+6 b1d2 f8e7
+7 e2e4 e8g8
+8 f1e1 d8c7
+9 e4e5 f6d7
+10 d1e2 b7b5
+11 h2h4 a7a5
+12 d2f1 c8a6
+13 f1h2 c6b4
+14 h4h5
+
+# col. 14i; Evans-Olafsson, Dallas 1957
+1 g1f3 d7d5
+2 g2g3 g8f6
+3 f1g2 g7g6
+4 e1g1 f8g7
+5 d2d3 e8g8
+6 b1d2 b8c6
+7 e2e4 e7e5
+8 c2c3 a7a5
+9 f1e1 d5e4
+10 d3e4 f6d7
+11 d1e2 b7b6
+12 d2c4 c8a6
+13 g2f1 d8f6
+
+# col. 15
+1 g1f3 d7d5
+2 g2g3 g8f6
+3 f1g2 g7g6
+4 d2d4 f8g7
+5 e1g1 c7c6
+6 b2b3 b8d7
+7 c1b2 e7e5
+8 d4e5 f6g4
+9 b1d2 d7e5
+10 f3e5 g4e5
+
+# col. 16d; Larsen-Mecking, Mallorca 1969
+1 g1f3 d7d5
+2 g2g3 c7c5
+3 f1g2 b8c6
+4 e1g1 e7e6
+5 d2d3 g7g6
+6 b1c3 f8g7
+7 a2a3 g8e7
+8 a1b1 e8g8
+9 c1d2 a8b8
+10 b2b4 c5b4
+11 a3b4 b7b5
+12 e2e4 a7a5
+
+# col. 17h; Benko-Bisguier, US Chp. 1963
+1 g1f3 d7d5
+2 g2g3 c8g4
+3 f1g2 b8d7
+4 c2c4 c7c6
+5 c4d5 c6d5
+6 b1c3 e7e6
+7 d1b3 d8b6
+8 b3b6 d7b6
+9 d2d3 a8c8
+10 c1e3 f8d6
+11 c3b5 d6b8
+12 e1g1 g8e7
+13 f1c1 c8c1
+14 a1c1 e7c6
+15 f3d4 e8d7
+
+# col. 18j; Keene-Basman, Hastings 1966-7
+1 g1f3 d7d5
+2 g2g3 c8g4
+3 f1g2 g8f6
+4 c2c4 c7c6
+5 c4d5 g4f3
+6 g2f3 c6d5
+7 d1b3 d8d7
+8 b1c3 e7e6
+9 e1g1 b8c6
+10 f3g2 f8e7
+11 d2d3 e8g8
+
+# col. 19k
+1 g1f3 d7d5
+2 g2g3 c8g4
+3 f1g2 g8f6
+4 c2c4 c7c6
+5 d1c2 e7e6
+6 e1g1 f8e7
+7 b2b3 b8d7
+8 c1b2 e8g8
+9 d2d3 a7a5
+10 b1d2 a5a4
+11 b2c3 a4b3
+12 a2b3 d8b6
+
+# col. 20m
+1 g1f3 d7d5
+2 g2g3 c8g4
+3 f1g2 g8f6
+4 e1g1 c7c6
+5 c2c4 e7e6
+6 c4d5 g4f3
+7 g2f3 c6d5
+8 b1c3 b8c6
+9 d2d3 f8e7
+10 f3g2
+
+# col. 21b; Savon-Aronin, USSR 1963
+1 g1f3 d7d5
+2 g2g3 b8c6
+3 d2d4 c8f5
+4 f1g2 c6b4
+5 b1a3 e7e6
+6 e1g1 g8f6
+7 f3h4 f5g4
+8 c2c4 c7c6
+9 a3c2 b4c2
+10 d1c2 f8e7
+11 h2h3 g4h5
+12 f2f3 h5g6
+13 h4g6 h7g6
+
+# col. 22d; Fischer-Ivkov, Santa Monica 1966
+1 g1f3 d7d5
+2 g2g3 e7e6
+3 f1g2 c7c5
+4 e1g1 b8c6
+5 d2d3 f8d6
+6 e2e4 g8e7
+7 b1d2 e8g8
+8 f3h4 b7b6
+9 f2f4 d5e4
+10 d3e4 c8a6
+11 f1e1 c5c4
+12 c2c3
+
+# col. 23
+1 g1f3 d7d5
+2 g2g3 b8d7
+3 c2c4 e7e6
+4 f1g2 g8f6
+5 b1c3 f8e7
+6 e1g1 e8g8
+7 d2d3 c7c5
+8 c4d5 e6d5
+9 c1g5 b7b6
+
+# col. 24g; Benko-Bisguier, US Chp. 1976-7
+1 g1f3 d7d5
+2 g2g3 g8f6
+3 f1g2 b7b6
+4 c2c4 e7e6
+5 c4d5 e6d5
+6 e1g1 f8d6
+7 d2d4 e8g8
+8 b1c3 c7c6
+9 f3e5 c8b7
+10 c1g5 h7h6
+11 g5f6 d8f6
+12 f2f4 f8d8
+13 e2e4
+
+# col. 25; Rabinovich-Rauser, Moscow 1934
+1 g1f3 d7d5
+2 b2b3 c8g4
+3 c1b2 b8d7
+4 c2c4 e7e6
+5 e2e3 g8f6
+6 f1e2 c7c6
+7 f3d4 g4e2
+8 d1e2 f8d6
+9 f2f4 e8g8
+
+# col. 26e; Evans-Najdorf, Dallas 1967
+1 g1f3 c7c5
+2 g2g3 b8c6
+3 f1g2 g7g6
+4 e1g1 f8g7
+5 e2e4 d7d6
+6 c2c3 e7e5
+7 d2d3 g8h6
+8 f3e1 e8g8
+9 f2f4 e5f4
+10 c1f4 h6g4
+11 b1a3 g4e5
+12 g1h1 d8b6
+13 d1d2 c8e6
+
+# col. 27h; Van den Pol-Barden, Holland v. England 1960
+1 g1f3 f7f5
+2 g2g3 g8f6
+3 f1g2 g7g6
+4 d2d3 f8g7
+5 b1d2 d7d6
+6 e2e4 e7e5
+7 d2c4 e8g8
+8 e4f5 g6f5
+9 c1e3 b8c6
+10 d3d4 e5e4
+
+# col. 28m; Gufeld-Bokuchava, USSR Chp. prelims 1968
+1 g1f3 f7f5
+2 g2g3 g8f6
+3 f1g2 e7e6
+4 c2c4 f8e7
+5 e1g1 e8g8
+6 d2d3 d7d6
+7 b1c3 b8c6
+8 a1b1 a7a5
+9 a2a3 d8e8
+10 b2b4 a5b4
+11 a3b4 e6e5
+
+# col. 29p; Lundin-Tartakover, Groningen 1946
+1 g1f3 f7f5
+2 g2g3 g8f6
+3 f1g2 e7e6
+4 c2c4 f8e7
+5 e1g1 e8g8
+6 b2b3 c7c5
+7 c1b2 b8c6
+8 b1c3 e6e5
+9 e2e3 d7d6
+10 d2d4
+
+# col. 30
+1 g1f3 g7g6
+2 g2g3 f8g7
+3 f1g2 e7e5
+4 d2d3 b8c6
+5 e2e4 d7d6
+6 b1c3 g8e7
+7 c1e3 e8g8
+8 d1d2 c6d4
+9 e1g1
+
+# King's Indian attack
+
+# col. 31a; Petrosian-Spasski, 14th World Chp. match game 1966
+1 g1f3 g8f6
+2 g2g3 b7b5
+3 h2h4 b5b4
+4 d2d3 c8b7
+5 e2e4 d7d6
+6 f1g2 b8d7
+7 e1g1 e7e6
+8 h4h5 a8b8
+9 b1d2 f8e7
+10 d2c4 e8g8
+
+# col. 32d
+1 g1f3 g8f6
+2 g2g3 g7g6
+3 b2b4 f8g7
+4 c1b2 e8g8
+5 f1g2 d7d5
+6 e1g1 c8g4
+7 c2c4 c7c6
+8 b1a3 b8d7
+9 a1c1 a7a5
+10 b4b5 a5a4
+11 d2d3 e7e5
+
+# col. 33e; Olafsson-Kavalek, Wijik aan Zee 1969
+1 g1f3 g8f6
+2 g2g3 g7g6
+3 b2b3 f8g7
+4 c1b2 e8g8
+5 f1g2 d7d6
+6 d2d4 f6d7
+7 b1c3 e7e5
+8 d1d2 f8e8
+9 d4e5 d7e5
+10 f3e5 g7e5
+
+# col. 34h
+1 g1f3 g8f6
+2 g2g3 g7g6
+3 c2c4 d7d6
+4 f1g2 f8g7
+5 e1g1 e8g8
+6 b1c3 b8d7
+7 d2d3 e7e5
+8 c1d2 d7c5
+9 b2b4 c5e6
+10 a1b1 f6e8
+11 a2a4 c7c6
+12 a4a5 e8c7
+
+# col. 35
+1 g1f3 g8f6
+2 c2c4 g7g6
+3 b2b3 f8g7
+4 c1b2 e8g8
+5 e2e3 d7d6
+6 f1e2 e7e5
+7 e1g1 f8e8
+8 b1c3 b8d7
+9 d2d3 c7c6
+
+# col. 36d
+1 g1f3 g8f6
+2 c2c4 g7g6
+3 b1c3 d7d5
+4 c4d5 f6d5
+5 d1a4 c8d7
+6 a4b3 d5b6
+7 d2d4 f8g7
+8 c1f4 d7e6
+9 b3c2 b8c6
+10 a1d1
+
+# col. 37f
+1 g1f3 g8f6
+2 c2c4 b7b6
+3 g2g3 c8b7
+4 f1g2 c7c5
+5 e1g1 g7g6
+6 b2b3 f8g7
+7 c1b2 e8g8
+8 b1c3 d7d5
+9 c3d5 f6d5
+10 b2g7 g8g7
+11 c4d5 d8d5
+12 d2d4 b8a6
+
+# col. 38h; Geller-Kholmov, Moscow 1969
+1 g1f3 g8f6
+2 c2c4 b7b6
+3 g2g3 c8b7
+4 f1g2 e7e6
+5 e1g1 f8e7
+6 b2b3 e8g8
+7 c1b2 d7d5
+8 e2e3 b8d7
+9 b1c3 f6e4
+10 c4d5 e4c3
+11 b2c3 e6d5
+
+# col. 39
+1 g1f3 g8f6
+2 b2b3 g7g6
+3 c2c4 f8g7
+4 c1b2 e8g8
+5 g2g3 c7c5
+6 f1g2 b7b6
+7 e1g1 c8b7
+8 b1c3 e7e6
+9 a1b1 d8e7
+
+# col. 40o; Lombardy-Burger, US Chp. 1969-70
+1 g1f3 g8f6
+2 b2b3 d7d5
+3 c1b2 e7e6
+4 e2e3 f8e7
+5 c2c4 e8g8
+6 d2d4 b7b6
+7 f1d3 c8b7
+8 e1g1 b8d7
+9 b1d2 c7c5
+10 d1e2 f6e4
+11 a1c1 a8c8

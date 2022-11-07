@@ -1,0 +1,39 @@
+/* This file contains code for X-CHESS.
+   Copyright (C) 1986 Free Software Foundation, Inc.
+
+This file is part of X-CHESS.
+
+X-CHESS is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY.  No author or distributor
+accepts responsibility to anyone for the consequences of using it
+or for whether it serves any particular purpose or works at all,
+unless he says so in writing.  Refer to the X-CHESS General Public
+License for full details.
+
+Everyone is granted permission to copy, modify and redistribute
+X-CHESS, but only under the conditions described in the
+X-CHESS General Public License.   A copy of this license is
+supposed to have been given to you along with X-CHESS so you
+can know your rights and responsibilities.  It should be in a
+file named COPYING.  Among other things, the copyright notice
+and this notice must be preserved on all copies.  */
+
+#define queen_small_width 32
+#define queen_small_height 32
+static short queen_small_bits[] = {
+   0x0000, 0x0000, 0x0000, 0x0000,
+   0x8000, 0x0000, 0x8000, 0x0000,
+   0x8080, 0x0080, 0x8080, 0x0080,
+   0x8180, 0x00c0, 0x8180, 0x00c0,
+   0xc100, 0x0041, 0xc100, 0x0041,
+   0xc302, 0x2061, 0xc306, 0x3061,
+   0xc304, 0x1061, 0xc30c, 0x1861,
+   0xc708, 0x0871, 0xc618, 0x0c31,
+   0xc638, 0x0e31, 0xce30, 0x0639,
+   0xce70, 0x0739, 0xee60, 0x033b,
+   0xeee0, 0x03bb, 0xffe0, 0x03ff,
+   0xffc0, 0x01ff, 0xffc0, 0x01ff,
+   0xff80, 0x00ff, 0xff80, 0x00ff,
+   0xff00, 0x007f, 0xff80, 0x00ff,
+   0xfff0, 0x07ff, 0xfff0, 0x07ff,
+   0x0000, 0x0000, 0x0000, 0x0000};

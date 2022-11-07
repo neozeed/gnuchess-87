@@ -1,0 +1,43 @@
+TODO LIST
+
+BIG
+  Rewrite move generator in assembly language or figure
+   out a faster algorithm. The point is to speed up the move
+   generation considerably.
+ Enter all collected games of several great Chess-masters
+   (Capablanca, Tal, Morphy). The program's "personality" will
+   then be determined by the master's style. It is not clear
+   whether selection of attackers or postional players would
+   be better for our purposes. Think about it.
+
+MEDIUM 
+  Figure out how to speed up quiescence.
+  Debug transposition table code and determine usefulness
+  Add iterative deepening, if it useful
+  See if aspiration is of any use.
+  Modify makemove/unmakemove so that it incrementally updates
+   the positional evaluation.
+
+SMALL
+  Program currently will move into a position that is in book,
+   regardless of whose move it is. It should move into book positions
+   only if the book position represents a position for the side to
+   move that corresponds to the current game (after the program makes
+   its move). Example: 1 e2e4 d7d6 2 d2d4 d7d5 (?)
+  When program plays black, why does it oscillate
+	1. e2e4 2. ... e7e5, since really e7e5 is
+        the first move.
+  Add tournament time controls.
+  Makemove/Unmakemove should handle hashing correctly for
+    promotions and castling.
+  Separate history mechanism into its own file. Perhaps rename
+  it to something else?
+  Modify ply-1 preprocessor so it randomizes.
+  Move out all random commands from main into separate files.
+  History command does not handle 'undos' properly.
+  Unmakemove does not seem to handle unmake's of pawn promotions
+   that capture. That is c2xb1=BQ does not get unmade properly!.
+   Actually, what seems to happen, is the unmake gets done but
+   the captured piece is not restored to the square!!!
+  Program will move into check if the checking piece is the
+   enemy king.

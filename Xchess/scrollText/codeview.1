@@ -1,0 +1,80 @@
+.TH CODEVIEW 1 "15 September 1986"
+.UC
+.SH NAME
+codeview - A C Code Viewer for X
+.SH SYNOPSIS
+.nf
+codeview [-f file] [host:display]
+.SH DESCRIPTION
+The 
+.I codeview
+program is a demonstration of the capabilities of
+the
+.I scrollText
+scrollable text output library.
+It displays a C source file in a window using a proportionally spaced
+font with the keywords
+in boldface,  comments in italics,  and string constants in a related
+(but different) font.  Each font may be displayed in a different color.
+If the
+.I file
+parameter is not provided,  it reads the source from
+standard input.  Double clicking in the main window
+ends the program.
+Scroll bar semantics are described in the description
+of the
+.I scrollText
+library.
+.SH "X DEFAULTS"
+.TP 8
+.B "Normal.Font"
+This is the primary font used to display the text.  It defaults
+to
+.I timrom12.
+.TP 8
+.B "Comment.Font"
+This is the font used to display C style comments.  It defaults to
+.I timrom12i.
+.TP 8
+.B "Keyword.Font"
+This is the font used to display C keywords.  It defaults to
+.I timrom12b.
+.TP 8
+.B "String.Font"
+This is the font used to display string constants.  It defaults
+to helv12.
+.TP 8
+.B Background
+This is the color used for the background of the window.  It defaults
+to
+.I white.
+.TP 8
+.B Foreground
+This is the color used for the text and scroll bar.  It defaults to
+.I black.
+.TP 8
+.B Border
+This is the color for the outer border of the window.  It defaults to
+.I black.
+.TP 8
+.B Cursor
+This is the color for the text cursor.  It defaults to
+.I black.
+.TP 8
+.B Normal.Color
+This is the color for the normal code text.  All of the font color
+X defaults default to 
+.I black.
+.TP 8
+.B Comment.Color
+Color of C style comments.
+.TP 8
+.B Keyword.Color
+Color of C keywords.
+.TP 8
+.B String.Color
+Color of C style string constants.
+.SH "SEE ALSO"
+scrollText(3)
+.SH AUTHOR
+David Harrison,  University of California,  Berkeley

@@ -1,0 +1,39 @@
+/* This file contains code for X-CHESS.
+   Copyright (C) 1986 Free Software Foundation, Inc.
+
+This file is part of X-CHESS.
+
+X-CHESS is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY.  No author or distributor
+accepts responsibility to anyone for the consequences of using it
+or for whether it serves any particular purpose or works at all,
+unless he says so in writing.  Refer to the X-CHESS General Public
+License for full details.
+
+Everyone is granted permission to copy, modify and redistribute
+X-CHESS, but only under the conditions described in the
+X-CHESS General Public License.   A copy of this license is
+supposed to have been given to you along with X-CHESS so you
+can know your rights and responsibilities.  It should be in a
+file named COPYING.  Among other things, the copyright notice
+and this notice must be preserved on all copies.  */
+
+#define bishop_small_width 32
+#define bishop_small_height 32
+static short bishop_small_bits[] = {
+   0x0000, 0x0000, 0x7000, 0x001c,
+   0x7000, 0x001c, 0x7000, 0x001c,
+   0x2000, 0x0008, 0x6000, 0x0016,
+   0x6000, 0x0022, 0xf000, 0x0023,
+   0xf000, 0x0021, 0xf800, 0x0021,
+   0xf800, 0x0023, 0xf800, 0x0023,
+   0xf800, 0x0027, 0x3800, 0x0027,
+   0x3c00, 0x002f, 0x0c00, 0x002c,
+   0x0e00, 0x003c, 0x3e00, 0x003f,
+   0x3e00, 0x003f, 0x3e00, 0x003f,
+   0x3e00, 0x003f, 0xfe00, 0x007f,
+   0xfe00, 0x007f, 0xfe00, 0x007f,
+   0xfe00, 0x007f, 0xfe00, 0x007f,
+   0xfe00, 0x007f, 0xfe00, 0x007f,
+   0xfe00, 0x007f, 0xffe0, 0x07ff,
+   0x0000, 0x0000, 0x0000, 0x0000};

@@ -1,0 +1,226 @@
+			  GNU CHESS HISTORY
+		      (current version 1.2.87)
+
+
+January 2, 1987   -- Stuart Cracraft at UCLA
+		     He added a few more Tal games to the collection.
+
+January 2, 1987   -- Jim Aspnes at MIT
+		     He contributed MCO variations for the Catalan,
+		     Queen's Indian, and Reti openings.
+
+December 29, 1986 -- Jim Aspnes at MIT
+		     He contributed all MCO variations of the Najdorf
+		     to the opening book.He also contributed a LISP
+		     macro (written in GNU Emacs Lisp) to convert
+		     xchess game formats to GNU Chess opening book
+		     format. 
+
+December 14, 1986 -- Ken Thompson at Bell Labs
+		     He contributed almost 200 games by Tal to
+		     our collection of Tal-games, bringing the
+		     total number of Tal positions in the book
+		     to 10,692. Total book positions now 13,207.
+		     These reside in bookin, bookin.bdg, bookin.tal.
+		     Note that presently, only bookin and bookin.tal
+		     can be used. The new Tal positions came in a
+		     slightly different format, which we have chosen
+		     to adopt as our standard format. All book
+		     games in bookin and bookin.bdg will gradually
+		     change into the new standard format.
+
+December 11, 1986 -- Stuart Cracraft at UCLA
+		     Added "averages" for node-count per move,
+		     cpu per move, rate per move to list_history
+		     and write_history.
+		     New version of Xchess installed.
+		     Started typing in Tal games into "bookin.tal".
+		     Added "total book positions" printout to "book"
+		     and "enter" statistics printout.
+
+December 10, 1986 -- Stuart Cracraft at UCLA
+		     Implemented aspiration search in normal
+		     alpha-beta search. Speedups of 3% to 40%
+		     have been noticed in most positions.
+		     Occasionally a slower search will result,
+		     but it is thought these are worth the
+		     usual speedups.
+
+December 9, 1986  -- Stuart Cracraft at UCLA
+		     Fixed minor bug in write_history()
+		     Added another Tal game, 2nd game of 1st world
+		     championship match with Botvinnik, a Benoni.
+
+December 9, 1986  -- Stuart Cracraft at UCLA
+		     Enhanced parallelism. All parallel processors
+		     now communicate via a shared data file and
+		     are kept running (in idle loops watching the
+		     shared data file). This saves us a few seconds
+		     on each move since the 'rsh' need not be invoked
+		     more than once (at the beginning). Since the
+		     shared data file is now implemented, we will
+		     next work towards a "parallel anarchy" in which
+		     any processor can use any other processor in
+		     order to reduce its search. The current scheme
+		     with the program being only as fast as its slowest
+		     processor, is quite inefficient.
+
+December 1, 1986 --  ASP at MIT Athena
+		     Added a couple of Master games from 
+		     Modern Chess Openings 12 (a Fischer game,
+		     and a Matanovic game).
+
+November 30, 1986 -- Stuart Cracraft at UCLA
+		     Added parallelism. Can now handle multiple
+		     processors (sharing same disk). Later we will
+		     add the capability to use processors not sharing
+		     the same disk. Modified README and MAN-PAGE.
+
+November 26, 1986 -- Stuart Cracraft at UCLA
+		     Fixed a few bugs in book-mailing mechanism.
+		     Fixed a bug regarding situations where only
+		     one move is available.
+		     Fixed a bug in read_history() that caused
+		     Black queenside castles to be mishandled.
+
+November 25, 1986 -- Stuart Cracraft at UCLA
+		     Added two pawn heuristics. Reward pawns moving into
+		     a phalanx of pawns. A phalanx is two or more
+		     horizontally-connected pawns. Likewise, penalize
+		     pawns leaving a phalanx of pawns. The penalty for
+		     leaving is a little more than the reward for
+		     entering.
+
+November 24, 1986 -- Stuart Cracraft at UCLA
+		     A user reported an unbelievable bug. Investigation
+		     of this bug led to the discovery that GNU Chess was
+ 		     not picking the move judged best by the tree search
+		     in all cases. This resulted in the bug showing
+ 		     itself which further showed that the program was
+		     selecting an inferior move. This may result in an
+		     improvement to the program's play.
+
+November 24, 1986 -- Stuart Cracraft at UCLA
+		     Added two heuristics. Penalize king moves if
+		     the king hasn't castled yet. Also, penalize pawn
+		     moves which produce doubled pawns. Should
+		     probably have something for isolated pawns
+		     too.
+
+November 23, 1986 -- Wayne Christopher at Berkeley
+		     New version of X chess display front-end.
+		     Fixed bugs include multiple pieces, runs
+		     on SUNS & Bobcats, loads saved games.
+
+November 23, 1986 -- Stuart Cracraft at UCLA
+		     Cleaned up some minor bugs regarding history.
+		     Added "Illegal command" error message at Wayne's
+		     request.
+
+November 22, 1986 -- David Goldberg at SUN Microsystems
+		     He complained that GNU Chess was memory-hungry.
+		     A few minor modifications to hash.c reduced
+		     uninitialized data space 87% and text space
+		     12%. This should make it easier for GNU Chess
+		     to run on small computers.
+
+November 22, 1986 -- Stuart Cracraft at UCLA
+		     "read" command was working, but needed
+		     additional tweaking so that history
+		     array would be printed by list_history().
+
+November 19, 1986 -- Stuart Cracraft at UCLA
+		     Added "read" command which reads a history
+		     file (game listing) and restores the board
+		     to as if the person was still playing that.
+		     particular game. Generally cleaned up 
+		     history mechanism, made it more orthogonal.
+		     Revised README. Added doc to MAN-PAGE.
+
+November 16, 1986 -- Stuart Cracraft at UCLA
+		     More opening book bugs found and fixed.
+		     Added capability to accept abbreviated-algebraic notation
+		     for entering "book" games from files.
+		     Added approximately 2500 new positions to
+		     opening book from games involving the
+		     opening called Blackmar-Diemer Gambit,
+		     a hoary line developed by Diemer in
+		     Germany years ago.
+
+November 15, 1986 -- Wayne Christopher at Berkeley
+		     He modified the move generator, resulting in
+		     a 28% speedup.
+
+November 14, 1986 -- Stuart Cracraft at UCLA
+		     He documented a lot of the GNU Chess modules
+		     with brief comments for each function. More
+		     extensive internal documentation may go in
+		     later.
+
+November 14, 1986 -- Wayne Christopher at Berkeley
+		     He created the Xchess interface for
+		     GNU Chess to have windowing with X windows.
+
+November 14, 1986 -- Stuart Cracraft at UCLA
+		     He added a "randomization" feature to
+		     the opening book. This will cause the
+		     program to select randomly from alternate
+		     variations whenever -DBEST is removed
+		     from Makefile's CFLAGS. If this is not
+		     removed, the opening play selects the
+		     first move found in the book as it appears
+		     "in order" in the human-readable book.
+
+November 14, 1986 -- David Goldberg at SUN Microsystems
+		     He responded to a query about dbm(3) which
+		     eventually resulted in the fixing of a subtle
+		     bug in the book code which was causing the
+		     program to sometimes hash to the incorrect
+		     address and thereby produce a book move which
+		     didn't even exist in the book. Thanks David!
+
+November 14, 1986 -- Stuart Cracraft at UCLA
+		     He added the "oboard" routine in util.c. This
+		     is the reverse of the already extant "iboard"
+		     (same module). These two routines translate
+		     between GNU Chess internal format and
+		     Forsythe notation.
+
+November 10, 1986 -- Stuart Cracraft at UCLA
+		     He added the "enter" command. This causes
+		     the current game to be entered in the book.
+		     Then, GNU Chess tries to mail this new entry
+		     to the book maintainers (for inclusion in
+		     the master copy of the book).
+
+November 9, 1986 -- Stuart Cracraft at UCLA
+		    He added code for an opening book. MAN-PAGE
+		    and README were modified accordingly.
+
+November 8, 1986 -- Stuart Cracraft at UCLA
+		    Checks and mates are now noticed at ply-1.
+		    This is a more complete fix to the Oct 31 fix.
+
+October 31, 1986 -- Stuart Cracraft at UCLA
+		    First attempt at fix to bug which causes
+		    program to check human's king when program
+		    itself is in check.
+
+October 31, 1986 -- Mly at MIT
+		    Reported a bug which caused program to crash
+		    when an illegal human move was played. Fixed.
+		    Also, program was unable to play as White. Fixed.
+
+October 22, 1986 -- Stuart Cracraft at UCLA
+		    Pps now rewards moves which liberate bishops.
+
+October 19, 1986 -- Stuart Cracraft at UCLA
+		    Added bitmapper routines to distribution.
+		    Added version notice.
+
+October 19, 1986 -- David Goldberg at SUN Microsystems
+		    Interfaced GNU Chess with SUN's chesstool.
+
+October 18, 1986 -- Initial release date. 
+
+

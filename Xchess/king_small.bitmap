@@ -1,0 +1,39 @@
+/* This file contains code for X-CHESS.
+   Copyright (C) 1986 Free Software Foundation, Inc.
+
+This file is part of X-CHESS.
+
+X-CHESS is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY.  No author or distributor
+accepts responsibility to anyone for the consequences of using it
+or for whether it serves any particular purpose or works at all,
+unless he says so in writing.  Refer to the X-CHESS General Public
+License for full details.
+
+Everyone is granted permission to copy, modify and redistribute
+X-CHESS, but only under the conditions described in the
+X-CHESS General Public License.   A copy of this license is
+supposed to have been given to you along with X-CHESS so you
+can know your rights and responsibilities.  It should be in a
+file named COPYING.  Among other things, the copyright notice
+and this notice must be preserved on all copies.  */
+
+#define king_small_width 32
+#define king_small_height 32
+static short king_small_bits[] = {
+   0x0000, 0x0000, 0x0000, 0x0000,
+   0x0000, 0x0000, 0x0000, 0x00e0,
+   0x8000, 0x009f, 0x7000, 0x0020,
+   0x0c00, 0x0040, 0x0200, 0x0180,
+   0x0180, 0x0300, 0x0040, 0x0600,
+   0x6040, 0x0830, 0x6020, 0x1030,
+   0x0020, 0x6000, 0x0020, 0x4000,
+   0x0010, 0x8000, 0x0010, 0x8002,
+   0x0010, 0x8001, 0x0110, 0x8001,
+   0x0310, 0x841f, 0x0210, 0x8400,
+   0x0610, 0x8600, 0x1c20, 0x4200,
+   0xf020, 0x43ff, 0x0020, 0x4000,
+   0x0040, 0x2000, 0x0040, 0x2000,
+   0x0180, 0x1800, 0xff00, 0x0fff,
+   0x0000, 0x0000, 0x0000, 0x0000,
+   0x0000, 0x0000, 0x0000, 0x0000};

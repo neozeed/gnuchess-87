@@ -1,0 +1,464 @@
+			      GNU Chess
+
+Copyright (C) 1986 Stuart Cracraft
+  (Copying permission notice at the end.)
+
+GNU Chess is your program (as long as you follow the copyright and
+licensing rules listed in the file COPYING). Your contribution to GNU
+Chess will be retained and given to hundreds of other GNU Chess
+devotees. Each improvement you make is important not just to you, but
+also to all of us. As such, you must give us your changes. And in
+fact, you are required to do so.
+
+This program is one small step toward making generally available a
+chess program with source to inspire current and future software
+developers. This program is purely experimental. It is not a
+strong program.
+
+In the best of all possible worlds, not only would this program play
+totally legal chess, but it would also play well. I leave this up to
+the recipients of this document, fellow computer chess enthusiasts in
+the world at large.
+
+Move generator
+--------------
+
+The most important thing in any chess program is the speed of the
+legal move generator. How fast can you generate lists of legal moves
+for arbitrary chess positions? Research has shown that this is
+directly correlated to how many moves ahead you can look and therefore
+inextricably linked with the chess strength of the chess program.
+
+This program has an adequate move generator. But it is nothing to
+boast about. The move generator is in the module 'gen.c'.  An
+alternate move generator is contained in the files tbl_*.c.  The
+latter is a table-driven move generator in which all offsets normally
+calculated upon execution are precalculated. It might work faster
+than the non-table-driven version unless the memory accessing is
+particularly slow. However, tests have shown that overall,
+table-driven is inferior due to the increased complexity.  (On a Vax
+8650, the GNU Chess move generator produces about 1200 move generations
+per second.  While this is adequate, it is definitely not fast enough.)
+
+If you can write a move generator that is super-fast, you are well on
+your way to writing a skillful artificial chessplayer.  But if you
+manage to do this, please let me know! I have spent many hours upon
+move generators, and still don't have anything I consider speedy.
+
+Opening Book
+------------
+
+GNU Chess has an opening book. It consists of hundreds of master games
+from tournament play. The program converts these games into positions,
+independent of moves, and then constructs a database such that any
+position may be retrieved via a hash-address. 
+
+There are currently two styles of syntax supported. The first is
+in "bookin". The second is in bookin.xxx, where "xxx" refers to
+the type of games in the collection. For example, the syntax of
+bookin.tal, reduced algebraic, is the second supported syntax.
+We do not support English descriptive syntax.
+
+Transpositions are handled by GNU Chess because the positions are
+dealt with independently of the series of moves by which they were
+reached.  Any position which ever appears in the current game at ply-1
+will be retrieved from the opening book along with a move made by the
+a master, and more frequently an international master or grandmaster.
+It does not matter when the position appears or what sequence of moves
+has occurred before. If several suggested moves are available, the
+program chooses from amongst these randomly, if -DRANDOM flag is set
+within Makefile.  Without this flag, GNU Chess selects the first
+available variation as it appears in physical order in the
+human-readable book.
+
+Now that the opening book C code has been written, our next
+project is to type in all of the collected games of a great
+master (such as Mikhail Tal or Robert Fischer). Then, GNU Chess
+will simply play exactly like the great master in the opening,
+assuming that the opponent obliges. You may wonder, but
+what happens when the game has clearly gone out of book? What
+to do? Just revert to the ordinary search? This is normally
+the case. But with GNU Chess, we hope to make the opening
+play quite sophisticated. We plan to implement the Fast
+Fourier Transform in such a way that the ply-one preprocessor
+will use a Fast Fourier as applied to all the Tal or Fischer
+games, and hence order its moves, not based on simple child-like
+heuristics, but based on the Fast Fourier of the thousands of
+Tal and Fischer games. The idea would be to give the program
+a chess style by having it duplicate the opening play of a
+great master and then mimic the middle and end-game play of
+the master once the opening book has been exhausted, backed
+up with tactical brute-force search of course. To the best of
+our knowledge, this idea is unique. You could help by typing
+in all the great games of a Master, or if you know of such
+a collection on-line, you could help by telling us about it.
+Currently, we have hundreds of games by former world champion
+Mikhail Tal (stored in "bookin.tal" in the distribution).
+Many of these games involve lovely sacrifices and are 
+quite interesting to play through.
+
+To teach GNU Chess the games of a Master, simply get a chess
+book, run gnuchess, type "neither", and then type in the game,
+move by move. You may have to convert the syntax of the published game
+(English or Algebraic) to gnuchess syntax (e.g. e2e4, etc.)
+After you have typed the game in, use the "enter" command
+to enter it in the opening book. You will then need to
+use the "book" command to have these changes installed
+in the binary database itself.
+
+When you do this, GNU Chess will try to "mail" each new
+game you enter to the GNU Chess opening book maintainers.
+If you are not on our network, then obviously the mail
+will fail -- in this instance, you should send the new
+entries to us via postal mail (our postal address is
+listed at the end of this document). Please do this so
+that we can have your contributions.
+
+Tree Search
+-----------
+GNU Chess tree search is patterned after the ply-1 preprocessor
+search invented by Gillogly and Berliner. This style of search
+is not too difficult to implement and carries with it an added bonus.
+The search speed is not significantly interfered with by the addition
+of chess knowledge.
+
+A ply-1 preprocessor search is simply a 1-ply search, with full
+evaluation taking place at ply-1 nodes, sorting the resultant
+backed-up values (no need for minimax/alphabeta at this point).
+The resulting sorted list is then searched, from most valuable
+move to least, with a full-width depth-first alpha-beta minimax search.
+
+A pre-set terminal depth is reached at which the depth-first search
+either terminates returning its value to the previous level or
+continues with a quiescence search to another pre-set level.
+The quiescence search involves the investigation only of captures
+or checks. In the case of this program, only captures are investigated
+beyond DEPTH nodes (defined in Makefile). These captures are then
+searched until MAXQUIES nodes (also defined in Makefile). 
+
+Terminal nodes are considered to be either a) MAXQUIES nodes 
+or b) DEPTH nodes if no captures exist. In either case, the
+evaluation consists solely of the difference of material between
+White and Black. This evaluation is then backed up in a minimax
+fashion using alpha-beta vertically through the tree. At the
+root node, a value and best move are returned. These are then
+selected as the program's move.
+
+Additionally, a technique called "aspiration search" is used.  This
+reduces the size of the alpha-beta search window to only two pawns
+wide before conducting the search. This results in more cutoffs and a
+faster search (3% to 40% faster) than pure alpha-beta. However,
+occasionally the returned search value will be outside of the window
+and the search is then called "failing high" or "failing low". If this
+happens, a second search must be done with a wider window. This may
+result in an occasional slower search, but the overall improvement
+averaged over many moves is such that "aspiration search" makes the
+program somewhat faster.
+
+So, essentially, GNU Chess orders the top level moves from
+which it must select using any set of heuristics we devise. Then,
+the search merely confirms that the move we choose wins the
+most amount of material, or at least remains equal. A tiebreak
+of equally valuable moves is based upon the order in which the
+moves appear in our heuristically-sorted movelist at the first
+ply.
+
+Incremental search is not particularly useful with this scheme.
+
+Parallel Processors
+-------------------
+GNU Chess can use more than one processor. The PARALLEL flag
+in Makefile creates a GNU Chess which uses parallelism.
+However, at present, the processors must share the same disk
+and communicate over a network using the Berkeley
+'rsh/rlogin/etc' convention. One such configuration is a SUN
+network with a central fileserver.  The distributed version
+of GNU Chess was set up to work with our SUN network
+configuration.
+
+This configuration is described in the 'procarray[]' in module
+parallel.c. Each host is listed with its corresponding machine
+architecture, whether to use it, and if it shares the same disk.
+The same disk is assumed to mean the one on which the user
+originally invoked GNU Chess intending to eventually use
+parallelism.
+
+Parallelism introduces many "sticky" factors into chess computing.
+One of these factors is the communications overhead in managing
+multiple processors. In our implementation, this overhead is
+immense and prevents the search from being nearly as fast as one
+would expect. But then again, our implementation is quite young
+and has much work ahead of it.
+
+Assuming N processors, the ply-1 move list is divided equally
+among the N processors and each processor then searches its own
+subset of the tree using the normal search algorithm, slightly
+changed from the version in alphabeta.c and called 'psearch'
+residing in parallel.c.
+
+A parallel search in GNU Chess usually consumes more terminal
+nodes, because good alpha and beta values are not as readily
+available. Some processors may get good alpha and beta values,
+others may not. Since these latter instances will slow down the
+search, the entire parallelism is as strong as its weakest link.
+In this case, the search terminates when the last processor 
+finishes. Needless to say, many improvements can (and will) be
+made to this scheme.
+
+We also plan to introduce modifications to allow the use of
+processors that don't share the same disk. This will involve
+transferring the statistics of the search to the originating
+processor after completion by any given processor.
+
+Fancy Displays
+--------------
+Currently, GNU Chess supports two different styles of windowing
+support for a fancy board. Fancy boards make it easier to play
+the game, because all the chess-pieces are displayed in lovely
+chess fonts on a big bitmap screen. How this generally happens
+is as follows: GNU Chess is invoked through the windowing
+support program which communicates with GNU Chess as a separate
+process, talking with GNU Chess in order to transmit and receive
+moves. All communication with GNU Chess, when using a windowing
+support program, is done through the windowing support system,
+generally via the use of a "mouse".
+
+The first style of chess windowing support is for the X windowing
+system. We provide full sources to the X-chess windowing display
+manager within the sub-directory 'Xchess' of this distribution.
+X-chess has quite a few more features than SUN's chesstool. For
+this reason, the truly supported window system for GNU Chess is
+X-chess. If you find a bug in X-chess, you may report it to us. 
+
+The second style of chess windowing support is SUN's chesstool.
+It is fully documented in SUN's manual pages. If you find a bug
+in chesstool, you may report it to us, but you should also
+report it to SUN so that they can fix it.
+
+Conclusion
+----------
+
+GNU Chess has been semi-debugged as of 1986, seems to play on
+a wide variety of machines, but nothing is guaranteed. You can
+help this program by making it better.
+ 
+The file CHANGES contains a complete history of changes made to the
+program, ordered chronologically.
+
+The file TODO contains other suggestions for how to improve this program.
+
+Here is a list of the source files and their actual purpose:
+
+	alphabeta.c	- searches the tree
+	book.c		- implements opening book.
+	eval.c		- evaluates a position
+	gen.c		- generates legal moves
+	hash.c		- tries to do hashing of positions already seen
+	main.c		- accepts commands, executes commands
+	moves.c		- random move routines
+	parallel.c      - parallel processing routines
+	pps.c		- positional pre-sort
+	tbl_gen.c	- table-driven move generation controller
+	tbl_genpc.c     - table-driven move generation for pieces
+	tbl_genpwn.c    - table-driven move generation for pawns
+	util.c		- random utilities
+        Bitmapper/*     - complex bitmap manipulation routines
+	Xchess/*        - the X window interface to GNU Chess
+	bookin		- human-readable book in GNU Chess move format,
+			  parsed via "book" command
+	bookin.tal      - collected games of Mikhail Tal,
+			  parsed via "enter" command
+	bookin.bdg	- additional book games in reduced algebraic format
+	convert.el      - LISP macro (in GNU Emacs Lisp) to convert
+                          Xchess-format games (via 'xchess -i') to
+                          GNU Chess format.
+
+Please note that the following are not considered debugged:
+table-driven move generation and hashing of positions during
+tree-search.
+
+The Bitmapper code is an experimental idea that would
+eventually replace the regular code. It is completely
+different in terms of the way it implements data structures
+and static evaluation, the idea being that by making the
+data structures more complex and informative, the program
+could carry along a lot more information from move to move.
+The ideas here are loosely based on the work of some Soviets
+and some early researchers at Northwestern University. Note
+that much of this code is hard-wired to specific machine
+word sizes, in this case, a 32-bit word. But it should not
+be too hard to change this to work on any given machine,
+as long as the word-size perfectly divides 64.
+
+Please remember that GNU Chess is purely experimental and
+has not participated in any rated tournaments.  You are
+welcome to enter it in a tournament, but proper
+recognition must be given to the author and the Free
+Software Foundation.  If any spectators inquire about the
+program during the tournament, you are also morally bound
+to tell them how you got the program and either to supply
+them with the distribution you received from us, or for
+the latest version tell the spectator our address so that
+he may get it directly from us.  We would also like you to
+tell us if you are entering it in a tournament.
+
+Only through your contributions to GNU Chess will it
+become a stronger program. There is the possibility that
+it could become the strongest chess program by the end of
+the 20th century if enough people join in and contribute!
+Both hardware experts and software experts are needed.
+
+If you have a hardware implementation of some of the functions
+normally carried out in software, and if you would like to interface
+your special-purpose hardware to GNU Chess, we will be more than happy
+to talk with you.
+
+If you have large chess databases, either of patterns, chess
+knowledge, or game-listings, and if you feel these could be
+of use in the development of GNU Chess, we want to talk with you.
+
+If you make any changes, additions, modifications, improvements,
+please be sure to pass along all your modifications to the address
+listed below.
+
+We will provide a tape along with GNU Chess, its full and most recent
+sources, as well as the opening book(s), but there is a $150 handling
+charge if you want to get GNU Chess from us directly. If you are on
+our network, we can provide it to you free of charge because the
+distribution doesn't take any of our time.  If you get GNU Chess from
+someone else, obviously they cannot charge you, but you also won't
+necessarily be getting the latest copy.
+
+   Stuart Cracraft
+   P.O. Box 13123
+   Torrance, Ca. 90503
+
+The predecessors of GNU Chess
+-----------------------------
+
+GNU Chess by Stuart Cracraft is a descendent of the Technology Chess
+Program by Jim Gillogly. A history of the latter is in order. The
+original TECH was written years ago by Jim when he was at
+Carnegie-Mellon University working for his Ph.D. under Hans Berliner.
+The results of his effort was a program called TECH, written in BLISS,
+a high-level systems programming language running under the TOPS-10
+operating system environment. (Jim provided some helpful theoretical
+commentary during the writing of GNU Chess.)
+
+TECH did not play very well. By most standards it was a low class D
+player. TECH's chief contribution to computer chess theory was it
+showed very little knowledge was necessary in order to play passable
+chess.  Indeed, TECH used only material evaluation at terminal nodes
+in the search tree.  The only sophisticated chess knowledge was used
+at the very top of the tree to examine the positions after each of the
+possible chess moves for the side on move, usually a number no larger
+than fifty.
+
+The advantage of this scheme was that huge amounts of chess knowledge
+could be embedded in the program without degrading overall
+performance.  However, one point in Jim's thesis was that the TECH
+program eschewed this knowledge but did not forbid it.  The bent of
+the program, however, was definitely to avoid it.  If the knowledge
+were made a significant part of the tree-search at the top-level and
+because this knowledge was applied in only 50 or so positions, and
+would not be subject to the exponential tree-growth, as in the case
+where more knowledge would be added to an evaluator used at terminal
+nodes, the performance would increase at minimal expense in increased
+cpu consumption. This is a non-trivial result, the importance of which
+has still not been generally recognized in the computer chess and
+artificial intelligence community.
+
+Alan Baisley of MIT liked what he saw in TECH and decided to speed it
+up.  TECH2 was his successful attempt at writing a new and stronger
+TECH.  He achieved this by rewriting the program in assembly language
+and substantially improving the speed of the move generation
+algorithm. Baisley's TECH2 could be considered a class C or low class
+B player at best. It ran on a KA-10 processor, and later on KI-10's
+and KL-10's (the modern and now defunct DEC-20 architecture).
+
+Neither the TECH developers nor the TECH2 developers spent much time
+adding much chess knowledge to the top-level ply-one preprocessor.
+This is unfortunate because this is probably the most significant
+theoretical contribution of the idea of TECH. While all other
+chess developers were using forward pruning (e.g. eliminating
+certain subsets of moves before even searching them) or adding
+more knowledge to terminal-node evaluators while cringing as
+each new addition chewed up a large chunk of cpu and decreased the
+effective depth to which the program could search, Gillogly, Baisley
+and their colleagues were demonstrating something very significant,
+something which I feel will eventually lead to a world-class
+computer chess player a few decades from now.
+
+Subsequent development efforts by commerical chess machine marketers
+have shown that the addition of this substantial knowledge at the
+first ply improves performance.  Some of these commerical TECH's are
+low class A players and there is one that is probably even a strong A
+player (the Constellation Expert marketed by Novag).
+
+Other versions of TECH have existed over the years, some containing a
+hardware-assist to do the move generation normally done in hardware.
+Sometimes the tree-search, positional evaluation, and move generation
+are all done in hardware circuitry.  One developer even went so far
+as to embed the move generation in VLSI technology, achieving the
+distinction of a complete board move generation in 250 nanoseconds.
+Not coincidentally, it achieved a very strong chess rating.
+
+Earlier, I mentioned the likelihood of TECH's basic idea eventually
+triumphing at the world-class level. My reasons for this are many,
+but I will briefly describe a few of them here.
+
+All conventional chess programs are severely limited in the amount of
+chess knowledge they can apply within the search.  It is not uncommon
+for modern programs/hardware to search millions of chess positions in
+three minutes while choosing a move in a tournament. This has been
+fortunate, because up to about 2200 level chess, tactics predominate.
+After that level however, positional considerations become extremely
+important. Because the programs search so many nodes, the time spent
+at any given node must be minimized if the search is to be conducted
+in the allotted time, usually no more than a few minutes. Forcing
+the program to become more accurate regarding its evaluation of
+a given node requires the addition of more computer instructions to
+evaluate the node positionally.
+
+Each additional computer instruction in these conventional programs to
+add chess knowledge must be balanced out by lots of new, sophisticated
+search techniques to make up for the time lost by adding new
+knowledge. It is probably true that in computer chess, knowledge is
+even less incrementally useful towards achieving increased strength
+than an incremental addition of a small amount of search speed. It is
+due to this basic fact that search beats knowledge. However, both are
+necessary. The question arises as to where the knowledge is essential
+and where it returns the most bang for its buck, inside the tree?
+At the bottom of the tree? Or, like TECH, at the top of the tree.
+
+Modern ply-one preprocessors in TECH-like descendents are very
+sophisticated. One such implementation has 120 rules, half of which
+are pawn heuristics.  This vastly exceeds the amount of heuristics in
+even the most sophisticated terminal-node evaluators. Because ply-one
+preprocessors in TECH-like descendents allow infinite additional chess
+knowledge at minimal additional cpu-time expense, it is this
+increasing store of chess knowledge that will eventually make the
+difference between a 2200 level computer chess player that achieves
+that strength due to 2600 level tactics and 1800 level positional
+sense versus a 2400 computer chess player that achieves that strength
+due to 2600 level tactics and a 2200 level positional sense. The ply-one
+preprocessor at that stage will be an expert-level heuristic based
+system of some sort, perhaps a massive database of millions of
+Master games with a sophisticated pattern matcher. For more information
+on this latter idea, see below.
+
+When we reach this point, the point of tying an expert-level system
+together with everything else in pure hardware, perhaps VLSI-level, it
+is then that we will reach the International Master and even Grand
+Master levels of chess play. The amount of work remaining to reach
+this point is immense.
+
+Copyright (C) 1986 Stuart Cracraft
+
+   Permission is granted to anyone to make or distribute verbatim copies
+   of this document as received, in any medium, provided that the
+   copyright notice and permission notice are preserved,
+   and that the distributor grants the recipient permission
+   for further redistribution as permitted by this notice.
+
+   Modified versions of this document may not be made.
