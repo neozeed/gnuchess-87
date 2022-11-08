@@ -16,7 +16,7 @@ char *file;
         dbrdonly = 0;
         strcpy(pagbuf, file);
         strcat(pagbuf, ".pag");
-        pagf = open(pagbuf, 2);
+        pagf = open(pagbuf, 2|O_BINARY);
         if (pagf < 0) {
                 pagf = open(pagbuf, 0|O_BINARY);
                 dbrdonly = 1;

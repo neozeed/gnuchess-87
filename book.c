@@ -23,7 +23,8 @@ and this notice must be preserved on all copies.  */
 #include <ctype.h>
 
 char *fgets();
-char *tempfile = "/tmp/chXXXXXX";
+//char *tempfile = "/tmp/chXXXXXX";
+char *tempfile = "chXXXXXX";
 
 typedef struct
 {
@@ -56,7 +57,7 @@ datum pos,key,posp;
 open_book(infile)
 char *infile;
 {
-    if ((bf = fopen(infile,"rb")) == NULL)     
+    if ((bf = fopen(infile,"r")) == NULL)     
       {
 	      printf("Sorry, book %s not available.\n",infile);
 	      return(FALSE);
@@ -222,7 +223,7 @@ write_book()
 	    return;
         }
     }
-    if ((bf = fopen(BOOKSRC,"ab")) == NULL) /* Try to open book */
+    if ((bf = fopen(BOOKSRC,"a")) == NULL) /* Try to open book */
     {
 	printf("Sorry, something is wrong. I cannot append or create %s\n",
 		BOOKSRC);
@@ -231,7 +232,7 @@ write_book()
 	return;
     }
     mktemp(tempfile);
-    if ((tempfp = fopen(tempfile,"wb")) == NULL)	/* Create temp file */
+    if ((tempfp = fopen(tempfile,"w")) == NULL)	/* Create temp file */
     {
 	printf("Sorry, a temp file %s could not be created.\n",
 	    tempfile);

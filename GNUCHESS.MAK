@@ -1,7 +1,7 @@
 # Microsoft Visual C++ generated build script - Do not modify
 
 PROJ = GNUCHESS
-DEBUG = 1
+DEBUG = 0
 PROGTYPE = 2
 CALLER = 
 ARGS = 
@@ -21,7 +21,7 @@ FIRSTC = ALPHABETA.C
 FIRSTCPP = 
 RC = rc
 CFLAGS_D_DEXE32 = /nologo /W3 /Zi /YX /D "MAXQUIES"="12" /D "DEPTH"="4" /D "_DEBUG" /D "_X86_" /D "_CONSOLE" /D "RANDOM" /D "HASH" /D "QUIES" /D "_WIN32" /FR /ML /Fd"GNUCHESS.PDB"   /Fp"GNUCHESS.PCH"
-CFLAGS_R_DEXE32 = /nologo /W3 /YX /O2 /D "MAXQUIES"="12" /D "DEPTH"="4" /D "NDEBUG" /D "_X86_" /D "_CONSOLE" /D "RANDOM" /D "HASH" /D "QUIES" /D "_WIN32" /FR /ML /Fp"GNUCHESS.PCH"
+CFLAGS_R_DEXE32 = /nologo /G5 /W3 /YX /O2 /D "MAXQUIES"="12" /D "DEPTH"="4" /D "NDEBUG" /D "_X86_" /D "_CONSOLE" /D "RANDOM" /D "HASH" /D "QUIES" /D "_WIN32" /FR /ML /Fp"GNUCHESS.PCH"
 LFLAGS_D_DEXE32 = /NOLOGO /DEBUG /DEBUGTYPE:cv /SUBSYSTEM:console netapi32.lib
 LFLAGS_R_DEXE32 = /NOLOGO /SUBSYSTEM:console netapi32.lib
 LFLAGS_D_LIB32 = /NOLOGO
@@ -162,3 +162,9 @@ $(PROJ).BSC: $(SBRS)
 	bscmake @<<
 /o$@ $(SBRS)
 <<
+
+OBJS=	ALPHABETA.OBJ BOOK.OBJ DBM.OBJ GEN.OBJ HASH.OBJ MAIN.OBJ MOVES.OBJ PARALLEL.OBJ \
+	PPS.OBJ UTIL.OBJ
+
+clean:
+	DEL -f  book.dir book.pag $(OBJS) gnuchess.exe
